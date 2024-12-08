@@ -1,33 +1,33 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import { Button } from "@/components/ui/button"
-import { ArrowUp } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { ArrowUp } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function ScrollToTop() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const toggleVisibility = () => {
       if (window.pageYOffset > 300) {
-        setIsVisible(true)
+        setIsVisible(true);
       } else {
-        setIsVisible(false)
+        setIsVisible(false);
       }
-    }
+    };
 
-    window.addEventListener('scroll', toggleVisibility)
+    window.addEventListener("scroll", toggleVisibility);
 
-    return () => window.removeEventListener('scroll', toggleVisibility)
-  }, [])
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
-    })
-  }
+      behavior: "smooth",
+    });
+  };
 
   return (
     <motion.div
@@ -36,13 +36,9 @@ export function ScrollToTop() {
       transition={{ duration: 0.3 }}
       className="fixed bottom-4 right-4 z-50"
     >
-      <Button
-        onClick={scrollToTop}
-        size="icon"
-      >
+      <Button onClick={scrollToTop} size="icon">
         <ArrowUp className="h-4 w-4" />
       </Button>
     </motion.div>
-  )
+  );
 }
-

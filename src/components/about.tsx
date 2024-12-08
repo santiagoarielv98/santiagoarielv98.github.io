@@ -1,9 +1,9 @@
-import Image from 'next/image'
-import { Phone, Mail, MapPin, Globe } from 'lucide-react'
-import { useTranslations } from 'next-intl'
+import Image from "next/image";
+import { Phone, Mail, MapPin, Globe } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function About() {
-  const t = useTranslations("about")
+  const t = useTranslations("about");
   return (
     <section id="about" className="py-16 px-6 bg-muted">
       <div className="max-w-4xl mx-auto">
@@ -17,32 +17,33 @@ export default function About() {
             />
           </div>
           <div className="flex-1 w-full">
-            <h2 className="text-3xl font-bold mb-4 text-center md:text-left">{t('title')}</h2>
+            <h2 className="text-3xl font-bold mb-4 text-center md:text-left">
+              {t("title")}
+            </h2>
             <p className="text-lg mb-6 text-center md:text-left">
-              {t('description')}
+              {t("description")}
             </p>
             <div className="grid grid-cols-1 gap-4">
               <div className="flex items-center space-x-2">
                 <Phone className="h-5 w-5 text-primary" />
-                <span>{t('phone')}</span>
+                <span>{t("phone")}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-5 w-5 text-primary" />
-                <span>{t('email')}</span>
+                <span>{t("email")}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-5 w-5 text-primary" />
-                <span>{t('location')}</span>
+                <span>{t("location")}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Globe className="h-5 w-5 text-primary" />
-                <span>{t('website')}</span>
+                <span>{t("website")}</span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
-

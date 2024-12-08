@@ -1,17 +1,9 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { useTranslations } from 'next-intl'
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useTranslations } from "next-intl";
 
-type TimelineItem = {
-  title: string
-  organization: string
-  period: string
-  description: string
-  tags: string[]
-}
-
-function TimelineSection({ title, items }: { title: string, items: string[] }) {
-  const t = useTranslations("resume")
+function TimelineSection({ title, items }: { title: string; items: string[] }) {
+  const t = useTranslations("resume");
 
   return (
     <div className="mb-8">
@@ -24,7 +16,9 @@ function TimelineSection({ title, items }: { title: string, items: string[] }) {
                 <div>
                   {/* <CardTitle className="text-lg">{key.title}</CardTitle> */}
                   <CardTitle>{t(`${key}.title`)}</CardTitle>
-                  <p className="text-sm text-muted-foreground">{t(`${key}.organization`)}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t(`${key}.organization`)}
+                  </p>
                 </div>
                 <Badge variant="secondary">{t(`${key}.period`)}</Badge>
               </div>
@@ -42,23 +36,22 @@ function TimelineSection({ title, items }: { title: string, items: string[] }) {
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 export default function Resume() {
-  const t = useTranslations("resume")
+  const t = useTranslations("resume");
 
-  const workExperience = ['workExperienceList.job1', 'workExperienceList.job2'];
-  const education = ['educationList.degree1', 'educationList.degree2'];
-  
+  const workExperience = ["workExperienceList.job1", "workExperienceList.job2"];
+  const education = ["educationList.degree1", "educationList.degree2"];
+
   return (
     <section id="resume" className="py-16 px-6">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-center">{t('title')}</h2>
-        <TimelineSection title={t('workExperience')} items={workExperience} />
-        <TimelineSection title={t('education')} items={education} />
+        <h2 className="text-3xl font-bold mb-8 text-center">{t("title")}</h2>
+        <TimelineSection title={t("workExperience")} items={workExperience} />
+        <TimelineSection title={t("education")} items={education} />
       </div>
     </section>
-  )
+  );
 }
-

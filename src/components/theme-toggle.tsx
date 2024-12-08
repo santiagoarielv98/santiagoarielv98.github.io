@@ -1,21 +1,21 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Moon, Sun } from 'lucide-react'
-import { useTheme } from "next-themes"
-import { useTranslations } from 'next-intl'
+import * as React from "react";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+import { useTranslations } from "next-intl";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
 
 export function ThemeToggle() {
-  const { setTheme } = useTheme()
-  const t = useTranslations("themeToggle")
+  const { setTheme } = useTheme();
+  const t = useTranslations("themeToggle");
 
   return (
     <DropdownMenu>
@@ -28,16 +28,15 @@ export function ThemeToggle() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setTheme("light")}>
-          {t('light')}
+          {t("light")}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("dark")}>
-          {t('dark')}
+          {t("dark")}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("system")}>
-          {t('system')}
+          {t("system")}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }
-

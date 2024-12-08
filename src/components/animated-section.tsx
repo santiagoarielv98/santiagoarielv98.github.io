@@ -1,18 +1,18 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 interface AnimatedSectionProps {
-  children: React.ReactNode
-  className?: string
+  children: React.ReactNode;
+  className?: string;
 }
 
 export function AnimatedSection({ children, className }: AnimatedSectionProps) {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
-  })
+  });
 
   return (
     <motion.div
@@ -24,6 +24,5 @@ export function AnimatedSection({ children, className }: AnimatedSectionProps) {
     >
       {children}
     </motion.div>
-  )
+  );
 }
-
