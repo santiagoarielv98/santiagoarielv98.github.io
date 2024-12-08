@@ -1,8 +1,11 @@
+'use client'
+
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Github, Linkedin, Phone, Mail, MessageCircle } from 'lucide-react'
+import { useToast } from "@/hooks/use-toast"
 
 const contactInfo = [
   { icon: Github, label: 'GitHub', value: 'github.com/tuusuario', href: 'https://github.com/tuusuario' },
@@ -13,11 +16,22 @@ const contactInfo = [
 ]
 
 export default function Contact() {
+  const { toast } = useToast()
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    // Aquí iría la lógica real de envío del formulario
+    toast({
+      title: "Formulario enviado",
+      description: "Gracias por tu mensaje. Me pondré en contacto contigo pronto.",
+    })
+  }
+
   return (
     <section id="contact" className="py-16 px-6 bg-muted">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold mb-8 text-center">Contáctame</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <Card>
             <CardHeader>
               <CardTitle>Información de Contacto</CardTitle>
@@ -48,7 +62,7 @@ export default function Contact() {
               <CardDescription>Completa el formulario y me pondré en contacto contigo pronto</CardDescription>
             </CardHeader>
             <CardContent>
-              <form className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium">Nombre</label>
                   <Input id="name" placeholder="Tu nombre" required />

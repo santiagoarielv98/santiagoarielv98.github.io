@@ -51,8 +51,7 @@ function TimelineSection({ title, items }: { title: string, items: TimelineItem[
       <h3 className="text-2xl font-bold mb-4">{title}</h3>
       <div className="space-y-4">
         {items.map((item, index) => (
-          <Card key={index} className="relative overflow-hidden">
-            <div className="absolute top-0 left-6 bottom-0 w-px bg-primary"></div>
+          <Card key={index} className="relative">
             <CardHeader className="pb-2">
               <div className="flex justify-between items-start">
                 <div>

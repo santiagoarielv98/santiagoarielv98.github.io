@@ -1,36 +1,51 @@
-import Image from 'next/image'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Code, Server, Cloud } from 'lucide-react'
 
-const skills = [
+type Skill = {
+  name: string
+  icon: React.ElementType
+}
+
+type SkillCategory = {
+  title: string
+  description: string
+  icon: React.ElementType
+  skills: Skill[]
+}
+
+const skillsData: SkillCategory[] = [
   {
     title: "Frontend",
     description: "Desarrollo de interfaces de usuario interactivas y responsivas.",
-    technologies: [
-      { name: "React", avatar: "/react-icon.svg" },
-      { name: "Next.js", avatar: "/nextjs-icon.svg" },
-      { name: "Tailwind CSS", avatar: "/tailwind-icon.svg" },
-      { name: "TypeScript", avatar: "/typescript-icon.svg" }
+    icon: Code,
+    skills: [
+      { name: "React", icon: Code },
+      { name: "Next.js", icon: Code },
+      { name: "Tailwind CSS", icon: Code },
+      { name: "TypeScript", icon: Code }
     ]
   },
   {
     title: "Backend",
     description: "Creación de APIs robustas y escalables.",
-    technologies: [
-      { name: "Node.js", avatar: "/nodejs-icon.svg" },
-      { name: "Express", avatar: "/express-icon.svg" },
-      { name: "MongoDB", avatar: "/mongodb-icon.svg" },
-      { name: "PostgreSQL", avatar: "/postgresql-icon.svg" }
+    icon: Server,
+    skills: [
+      { name: "Node.js", icon: Server },
+      { name: "Express", icon: Server },
+      { name: "MongoDB", icon: Server },
+      { name: "PostgreSQL", icon: Server }
     ]
   },
   {
     title: "Cloud",
     description: "Despliegue y gestión de aplicaciones en la nube.",
-    technologies: [
-      { name: "AWS", avatar: "/aws-icon.svg" },
-      { name: "Docker", avatar: "/docker-icon.svg" },
-      { name: "Kubernetes", avatar: "/kubernetes-icon.svg" },
-      { name: "Vercel", avatar: "/vercel-icon.svg" }
+    icon: Cloud,
+    skills: [
+      { name: "AWS", icon: Cloud },
+      { name: "Docker", icon: Cloud },
+      { name: "Kubernetes", icon: Cloud },
+      { name: "Vercel", icon: Cloud }
     ]
   }
 ]
@@ -41,24 +56,23 @@ export default function Skills() {
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold mb-8 text-center">Mis Habilidades</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skills.map((skill, index) => (
+          {skillsData.map((category, index) => (
             <Card key={index}>
               <CardHeader>
-                <CardTitle>{skill.title}</CardTitle>
+                <div className="flex items-center space-x-2">
+                  <category.icon className="h-6 w-6 text-primary" />
+                  <CardTitle>{category.title}</CardTitle>
+                </div>
               </CardHeader>
               <CardContent>
-                <p className="mb-4">{skill.description}</p>
+                <p className="mb-4">{category.description}</p>
                 <div className="flex flex-wrap gap-2">
-                  {skill.technologies.map((tech, techIndex) => (
-                    <Badge key={techIndex} variant="secondary" className="flex items-center gap-1 px-2 py-1">
-                      <Image
-                        src={tech.avatar}
-                        alt={`${tech.name} icon`}
-                        width={16}
-                        height={16}
-                        className="rounded-full"
-                      />
-                      {tech.name}
+                  {category.skills.map((skill, skillIndex) => (
+                    <Badge key={skillIndex} variant="secondary" className="flex items-center gap-1 px-2 py-1">
+                      <span className="flex items-center justify-center bg-primary text-primary-foreground rounded-full p-1 w-5 h-5">
+                        <skill.icon className="h-3 w-3" />
+                      </span>
+                      {skill.name}
                     </Badge>
                   ))}
                 </div>

@@ -3,30 +3,37 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, Github, Linkedin, Phone, MessageCircle } from 'lucide-react'
+import { Menu, Github, Linkedin, Phone, MessageCircle, Home, User, Code, Briefcase, FileText, Mail, Download } from 'lucide-react'
+import Image from 'next/image'
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet"
 import {
   Sidebar,
   SidebarContent,
   SidebarHeader,
   SidebarFooter,
+  SidebarTrigger,
+  useSidebar
 } from "@/components/ui/sidebar"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { Separator } from "@/components/ui/separator"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { useToast } from "@/hooks/use-toast"
+import { useIsMobile } from "@/hooks/useIsMobile"
 
 const navItems = [
-  { name: "Inicio", href: "/" },
-  { name: "Sobre mí", href: "/#about" },
-  { name: "Habilidades", href: "/#skills" },
-  { name: "Proyectos", href: "/#projects" },
-  { name: "Trayectoria", href: "/#resume" },
-  { name: "Contacto", href: "/#contact" },
+  { name: "Inicio", href: "/", icon: Home },
+  { name: "Sobre mí", href: "/#about", icon: User },
+  { name: "Habilidades", href: "/#skills", icon: Code },
+  { name: "Proyectos", href: "/#projects", icon: Briefcase },
+  { name: "Trayectoria", href: "/#resume", icon: FileText },
+  { name: "Contacto", href: "/#contact", icon: Mail },
 ]
 
 const socialItems = [
@@ -37,8 +44,34 @@ const socialItems = [
 ]
 
 export function Nav() {
-  const [open, setOpen] = React.useState(false)
   const pathname = usePathname()
+  const { toast } = useToast()
+  const [activeSection, setActiveSection] = React.useState("/")
+  const [language, setLanguage] = React.useState<'es' | 'en'>('es')
+  const { open, setOpen } = useSidebar()
+  const isMobile = useIsMobile()
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map(item => item.href.replace('/#', ''))
+      const currentSection = sections.find(section => {
+        const element = document.getElementById(section)
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          return rect.top <= 100 && rect.bottom >= 100
+        }
+        return false
+      })
+      if (currentSection) {
+        setActiveSection(`/#${currentSection}`)
+      } else if (window.scrollY === 0) {
+        setActiveSection("/")
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const NavContent = React.useCallback(() => (
     <>
@@ -48,30 +81,46 @@ export function Nav() {
           href={item.href}
           className={cn(
             "flex items-center text-sm font-medium text-muted-foreground rounded-md hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-accent-foreground h-9 px-3 py-2",
-            pathname === item.href && "bg-accent/50 text-accent-foreground"
+            activeSection === item.href && "bg-accent/50 text-accent-foreground"
           )}
         >
+          <item.icon className="mr-2 h-4 w-4" />
           {item.name}
         </Link>
       ))}
+      <Link
+        href="/path-to-your-cv.pdf"
+        className="flex items-center text-sm font-medium text-muted-foreground rounded-md hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 h-9 px-3 py-2"
+        download
+        onClick={(e) => {
+          e.preventDefault()
+          toast({
+            title: "Descargando CV",
+            description: "Tu CV se está descargando.",
+          })
+          // Aquí iría la lógica real de descarga
+        }}
+      >
+        <Download className="mr-2 h-4 w-4" />
+        Descargar CV
+      </Link>
     </>
-  ), [pathname])
+  ), [activeSection, toast])
 
   return (
     <>
-      {/* Sidebar para pantallas grandes */}
-      <Sidebar className="hidden lg:flex">
+      <Sidebar>
         <SidebarHeader className="border-b px-6 py-4">
           <Link href="/" className="text-2xl font-bold">
-            Mi Portfolio
+            {language === 'es' ? 'Mi Portfolio' : 'My Portfolio'}
           </Link>
         </SidebarHeader>
         <SidebarContent className="px-4 py-6">
           <NavContent />
         </SidebarContent>
         <SidebarFooter className="border-t px-6 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex space-x-2">
+          <div className="flex flex-col items-center space-y-4">
+            <div className="flex justify-center space-x-2">
               {socialItems.map((item, index) => (
                 <Button key={index} variant="ghost" size="icon" asChild>
                   <Link href={item.href} target="_blank" rel="noopener noreferrer">
@@ -81,43 +130,46 @@ export function Nav() {
                 </Button>
               ))}
             </div>
-            <ThemeToggle />
+            <Separator />
+            <div className="flex items-center justify-between w-full">
+              <ThemeToggle />
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" className="px-2">
+                    <Image
+                      // src={language === 'es' ? "/es-flag.png" : "/en-flag.png"}
+                      // usar imagen de internet
+                      src={`https://flagcdn.com/24x18/${language === 'es' ? 'es' : 'gb'}.png`}
+                      alt={language === 'es' ? "Español" : "English"}
+                      width={24}
+                      height={24}
+                    />
+                    <span className="ml-2">{language.toUpperCase()}</span>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuItem onClick={() => setLanguage('es')}>
+                    {/* <Image src="/es-flag.png" alt="Español" width={24} height={24} /> */}
+                    <Image src="https://flagcdn.com/24x18/es.png" alt="Español" width={24} height={24} />
+                    <span className="ml-2">ES</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setLanguage('en')}>
+                    {/* <Image src="/en-flag.png" alt="English" width={24} height={24} /> */}
+                    <Image src="https://flagcdn.com/24x18/gb.png" alt="English" width={24} height={24} />
+                    <span className="ml-2">EN</span>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
           </div>
         </SidebarFooter>
       </Sidebar>
-
-      {/* Menú móvil */}
-      <nav className="lg:hidden flex items-center justify-between p-4 bg-background">
-        <Link href="/" className="text-2xl font-bold">
-          Mi Portfolio
-        </Link>
-        <div className="flex items-center space-x-2">
-          <ThemeToggle />
-          <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger asChild>
-              <Button variant="outline" size="icon">
-                <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left">
-              <div className="flex flex-col space-y-4 mt-4">
-                <NavContent />
-                <div className="flex justify-around mt-6">
-                  {socialItems.map((item, index) => (
-                    <Button key={index} variant="ghost" size="icon" asChild>
-                      <Link href={item.href} target="_blank" rel="noopener noreferrer">
-                        <item.icon className="h-5 w-5" />
-                        <span className="sr-only">{item.icon.name}</span>
-                      </Link>
-                    </Button>
-                  ))}
-                </div>
-              </div>
-            </SheetContent>
-          </Sheet>
-        </div>
-      </nav>
+      <SidebarTrigger className="fixed top-4 left-4 z-50 md:hidden">
+        <Button variant="outline" size="icon">
+          <Menu className="h-5 w-5" />
+          <span className="sr-only">Toggle menu</span>
+        </Button>
+      </SidebarTrigger>
     </>
   )
 }
