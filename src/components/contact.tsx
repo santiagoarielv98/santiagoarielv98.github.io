@@ -10,7 +10,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Github, Linkedin, Phone, Mail, MessageCircle } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Phone,
+  Mail,
+  MessageCircle,
+  Send,
+} from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
@@ -146,6 +153,7 @@ export default function Contact() {
                   />
                 </div>
                 <Button type="submit" className="w-full">
+                  <Send className="h-5 w-5" aria-hidden="true" />
                   {t("formSubmit")}
                 </Button>
               </form>
