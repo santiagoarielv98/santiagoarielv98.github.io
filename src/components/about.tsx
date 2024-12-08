@@ -10,7 +10,7 @@ export default function About() {
         <div className="flex flex-col items-center md:items-start md:flex-row gap-8">
           <div className="w-48 h-48 relative overflow-hidden rounded-full mx-auto md:mx-0">
             <Image
-              src="/profile-picture.jpg"
+              src="/next.svg"
               alt="Tu nombre"
               layout="fill"
               objectFit="cover"

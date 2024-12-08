@@ -1,39 +1,39 @@
 'use client'
 
-import * as React from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Menu, Github, Linkedin, Phone, MessageCircle, Home, User, Code, Briefcase, FileText, Mail, Download } from 'lucide-react'
+import { setUserLocale } from '@/lib/locale'
+import { Briefcase, Code, Download, FileText, Github, Home, Linkedin, Mail, Menu, MessageCircle, Phone, User } from 'lucide-react'
 import Image from 'next/image'
+import Link from "next/link"
+import * as React from "react"
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarHeader,
-  SidebarFooter,
-  SidebarTrigger,
-  useSidebar
-} from "@/components/ui/sidebar"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { Separator } from "@/components/ui/separator"
+import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { Separator } from "@/components/ui/separator"
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarHeader,
+  SidebarTrigger
+} from "@/components/ui/sidebar"
 import { useToast } from "@/hooks/use-toast"
-import { useIsMobile } from "@/hooks/useIsMobile"
+import { Locale } from '@/i18n/config'
+import { cn } from "@/lib/utils"
+import { useLocale, useTranslations } from 'next-intl'
 
 const navItems = [
-  { name: "Inicio", href: "/", icon: Home },
-  { name: "Sobre mí", href: "/#about", icon: User },
-  { name: "Habilidades", href: "/#skills", icon: Code },
-  { name: "Proyectos", href: "/#projects", icon: Briefcase },
-  { name: "Trayectoria", href: "/#resume", icon: FileText },
-  { name: "Contacto", href: "/#contact", icon: Mail },
+  { name: "home", href: "/", icon: Home },
+  { name: "about", href: "/#about", icon: User },
+  { name: "skills", href: "/#skills", icon: Code },
+  { name: "projects", href: "/#projects", icon: Briefcase },
+  { name: "resume", href: "/#resume", icon: FileText },
+  { name: "contact", href: "/#contact", icon: Mail },
 ]
 
 const socialItems = [
@@ -44,12 +44,18 @@ const socialItems = [
 ]
 
 export function Nav() {
-  const pathname = usePathname()
+  const [isPending, startTransition] = React.useTransition();
+
+  const t = useTranslations("nav")
   const { toast } = useToast()
   const [activeSection, setActiveSection] = React.useState("/")
-  const [language, setLanguage] = React.useState<'es' | 'en'>('es')
-  const { open, setOpen } = useSidebar()
-  const isMobile = useIsMobile()
+  const locale = useLocale()
+
+  const setLanguage = async (lang: Locale) => {
+    startTransition(() => {
+      setUserLocale(lang);
+    });
+  };
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -85,7 +91,7 @@ export function Nav() {
           )}
         >
           <item.icon className="mr-2 h-4 w-4" />
-          {item.name}
+          {t(`sections.${item.name}`)}
         </Link>
       ))}
       <Link
@@ -112,55 +118,53 @@ export function Nav() {
       <Sidebar>
         <SidebarHeader className="border-b px-6 py-4">
           <Link href="/" className="text-2xl font-bold">
-            {language === 'es' ? 'Mi Portfolio' : 'My Portfolio'}
+            {/* {language === 'es' ? 'Mi Portfolio' : 'My Portfolio'} */}
+            {t('portfolio')}
           </Link>
         </SidebarHeader>
         <SidebarContent className="px-4 py-6">
           <NavContent />
         </SidebarContent>
         <SidebarFooter className="border-t px-6 py-4">
-          <div className="flex flex-col items-center space-y-4">
-            <div className="flex justify-center space-x-2">
-              {socialItems.map((item, index) => (
-                <Button key={index} variant="ghost" size="icon" asChild>
-                  <Link href={item.href} target="_blank" rel="noopener noreferrer">
-                    <item.icon className="h-5 w-5" />
-                    <span className="sr-only">{item.icon.name}</span>
-                  </Link>
+          <div className="flex justify-center space-x-2">
+            {socialItems.map((item, index) => (
+              <Button key={index} variant="ghost" size="icon" asChild>
+                <Link href={item.href} target="_blank" rel="noopener noreferrer">
+                  <item.icon className="h-5 w-5" />
+                  <span className="sr-only">{item.icon.name}</span>
+                </Link>
+              </Button>
+            ))}
+          </div>
+
+        </SidebarFooter>
+        <Separator />
+        <SidebarFooter>
+          <div className="flex items-center justify-between w-full">
+            <ThemeToggle />
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" className="px-2">
+                  <Image
+                    src={`https://flagcdn.com/24x18/${locale === 'es' ? 'es' : 'gb'}.png`}
+                    alt={locale === 'es' ? "Español" : "English"}
+                    width={24}
+                    height={18}
+                  />
+                  <span className="ml-2">{locale.toUpperCase()}</span>
                 </Button>
-              ))}
-            </div>
-            <Separator />
-            <div className="flex items-center justify-between w-full">
-              <ThemeToggle />
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="outline" className="px-2">
-                    <Image
-                      // src={language === 'es' ? "/es-flag.png" : "/en-flag.png"}
-                      // usar imagen de internet
-                      src={`https://flagcdn.com/24x18/${language === 'es' ? 'es' : 'gb'}.png`}
-                      alt={language === 'es' ? "Español" : "English"}
-                      width={24}
-                      height={24}
-                    />
-                    <span className="ml-2">{language.toUpperCase()}</span>
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  <DropdownMenuItem onClick={() => setLanguage('es')}>
-                    {/* <Image src="/es-flag.png" alt="Español" width={24} height={24} /> */}
-                    <Image src="https://flagcdn.com/24x18/es.png" alt="Español" width={24} height={24} />
-                    <span className="ml-2">ES</span>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => setLanguage('en')}>
-                    {/* <Image src="/en-flag.png" alt="English" width={24} height={24} /> */}
-                    <Image src="https://flagcdn.com/24x18/gb.png" alt="English" width={24} height={24} />
-                    <span className="ml-2">EN</span>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem onClick={() => setLanguage('es')}>
+                  <Image src="https://flagcdn.com/24x18/es.png" alt="Español" width={24} height={18} />
+                  <span className="ml-2">ES</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage('en')}>
+                  <Image src="https://flagcdn.com/24x18/gb.png" alt="English" width={24} height={18} />
+                  <span className="ml-2">EN</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </SidebarFooter>
       </Sidebar>

@@ -19,12 +19,12 @@ export default function Projects() {
             <Card key={index} className="flex flex-col overflow-hidden">
               <div className="relative h-48 w-full">
                 <Image
-                  // src={project.image}
-                  src='https://v0.dev/placeholder.svg?height=200&width=400'
+                  src='/next.svg'
                   alt={t(`projectsList.${key}.title`)}
                   layout="fill"
                   objectFit="cover"
                   className="rounded-t-lg"
+                  sizes='(min-width: 640px) 33.3vw, (min-width: 1024px) 25vw, 50vw'
                 />
               </div>
               <CardHeader>

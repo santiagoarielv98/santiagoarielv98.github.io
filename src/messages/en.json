@@ -1,0 +1,127 @@
+{
+  "hero": {
+    "welcome": "Welcome to my Portfolio",
+    "description": "I am a web developer passionate about creating amazing digital experiences.",
+    "button": "View my projects"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I am a web developer with experience in React, Next.js, and UI/UX design. I am passionate about creating fast, accessible, and easy-to-use web applications.",
+    "phone": "+1 234 567 890",
+    "email": "youremail@example.com",
+    "location": "Your City, Country",
+    "website": "www.yourwebsite.com"
+  },
+  "skills": {
+    "title": "My Skills",
+    "categories": {
+      "frontend": {
+        "title": "Frontend",
+        "description": "Development of interactive and responsive user interfaces."
+      },
+      "backend": {
+        "title": "Backend",
+        "description": "Creation of robust and scalable APIs."
+      },
+      "cloud": {
+        "title": "Cloud",
+        "description": "Deployment and management of cloud applications."
+      }
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "repo": "Repo",
+    "demo": "Demo",
+    "projectsList": {
+      "project1": {
+        "title": "Project 1",
+        "description": "A web application built with React and Next.js",
+        "technologies": ["React", "Next.js", "Tailwind CSS", "TypeScript"]
+      },
+      "project2": {
+        "title": "Project 2",
+        "description": "An e-commerce site with payment integration",
+        "technologies": ["Vue.js", "Nuxt.js", "Stripe", "MongoDB"]
+      },
+      "project3": {
+        "title": "Project 3",
+        "description": "A mobile application developed with React Native",
+        "technologies": ["React Native", "Expo", "Firebase", "Redux"]
+      }
+    }
+  },
+  "resume": {
+    "title": "My Resume",
+    "workExperience": "Work Experience",
+    "education": "Education",
+    "workExperienceList": {
+      "job1": {
+        "title": "Senior Full Stack Developer",
+        "organization": "Tech Innovators Inc.",
+        "period": "2021 - Present",
+        "description": "Led the development of scalable web applications using React, Node.js, and AWS.",
+        "tags": ["React", "Node.js", "AWS", "Docker", "GraphQL"]
+      },
+      "job2": {
+        "title": "Front-end Developer",
+        "organization": "Creative Web Solutions",
+        "period": "2018 - 2021",
+        "description": "Developed responsive and accessible user interfaces for clients from various sectors.",
+        "tags": ["JavaScript", "React", "CSS", "Webpack", "Jest"]
+      }
+    },
+    "educationList": {
+      "degree1": {
+        "title": "Master's in Software Engineering",
+        "organization": "Technological University",
+        "period": "2017 - 2018",
+        "description": "Specialization in software architectures and agile methodologies.",
+        "tags": ["Agile", "Software Architecture", "Cloud Computing"]
+      },
+      "degree2": {
+        "title": "Bachelor's in Computer Science",
+        "organization": "State University",
+        "period": "2013 - 2017",
+        "description": "Fundamentals of programming, data structures, and algorithms.",
+        "tags": ["Java", "Data Structures", "Algorithms", "Database Systems"]
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Me",
+    "contactInfoTitle": "Contact Information",
+    "contactInfoDescription": "Find me on the following platforms",
+    "formTitle": "Send me a message",
+    "formDescription": "Fill out the form and I will get back to you soon",
+    "formLabels": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message"
+    },
+    "formSubmit": "Send message",
+    "formSuccessTitle": "Form submitted",
+    "formSuccessDescription": "Thank you for your message. I will get back to you soon."
+  },
+  "nav": {
+    "portfolio": "My Portfolio",
+    "downloadCV": "Download CV",
+    "downloadingCV": {
+      "title": "Downloading CV",
+      "description": "Your CV is being downloaded."
+    },
+    "sections": {
+      "home": "Home",
+      "about": "About Me",
+      "skills": "Skills",
+      "projects": "Projects",
+      "resume": "Resume",
+      "contact": "Contact"
+    }
+  },
+  "themeToggle": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  }
+}
