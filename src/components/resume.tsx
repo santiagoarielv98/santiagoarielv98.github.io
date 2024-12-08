@@ -7,12 +7,12 @@ function TimelineSection({ title, items }: { title: string; items: string[] }) {
 
   return (
     <div className="mb-8">
-      <h3 className="text-2xl font-bold mb-4">{title}</h3>
+      <h3 className="mb-4 text-2xl font-bold">{title}</h3>
       <div className="space-y-4">
         {items.map((key, index) => (
           <Card key={index} className="relative">
             <CardHeader className="pb-2">
-              <div className="flex justify-between items-start">
+              <div className="flex items-start justify-between">
                 <div>
                   {/* <CardTitle className="text-lg">{key.title}</CardTitle> */}
                   <CardTitle>{t(`${key}.title`)}</CardTitle>
@@ -46,9 +46,9 @@ export default function Resume() {
   const education = ["educationList.degree1", "educationList.degree2"];
 
   return (
-    <section id="resume" className="py-16 px-6">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-center">{t("title")}</h2>
+    <section id="resume" className="px-6 py-16">
+      <div className="mx-auto max-w-4xl">
+        <h2 className="mb-8 text-center text-3xl font-bold">{t("title")}</h2>
         <TimelineSection title={t("workExperience")} items={workExperience} />
         <TimelineSection title={t("education")} items={education} />
       </div>
