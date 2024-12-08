@@ -37,17 +37,32 @@
       "project1": {
         "title": "Proyecto 1",
         "description": "Una aplicación web construida con React y Next.js",
-        "technologies": ["React", "Next.js", "Tailwind CSS", "TypeScript"]
+        "technologies": [
+          "React",
+          "Next.js",
+          "Tailwind CSS",
+          "TypeScript"
+        ]
       },
       "project2": {
         "title": "Proyecto 2",
         "description": "Un sitio de comercio electrónico con integración de pagos",
-        "technologies": ["Vue.js", "Nuxt.js", "Stripe", "MongoDB"]
+        "technologies": [
+          "Vue.js",
+          "Nuxt.js",
+          "Stripe",
+          "MongoDB"
+        ]
       },
       "project3": {
         "title": "Proyecto 3",
         "description": "Una aplicación móvil desarrollada con React Native",
-        "technologies": ["React Native", "Expo", "Firebase", "Redux"]
+        "technologies": [
+          "React Native",
+          "Expo",
+          "Firebase",
+          "Redux"
+        ]
       }
     }
   },
@@ -61,14 +76,26 @@
         "organization": "Tech Innovators Inc.",
         "period": "2021 - Presente",
         "description": "Lideré el desarrollo de aplicaciones web escalables utilizando React, Node.js y AWS.",
-        "tags": ["React", "Node.js", "AWS", "Docker", "GraphQL"]
+        "tags": [
+          "React",
+          "Node.js",
+          "AWS",
+          "Docker",
+          "GraphQL"
+        ]
       },
       "job2": {
         "title": "Desarrollador Front-end",
         "organization": "Creative Web Solutions",
         "period": "2018 - 2021",
         "description": "Desarrollé interfaces de usuario responsivas y accesibles para clientes de diversos sectores.",
-        "tags": ["JavaScript", "React", "CSS", "Webpack", "Jest"]
+        "tags": [
+          "JavaScript",
+          "React",
+          "CSS",
+          "Webpack",
+          "Jest"
+        ]
       }
     },
     "educationList": {
@@ -77,14 +104,23 @@
         "organization": "Universidad Tecnológica",
         "period": "2017 - 2018",
         "description": "Especialización en arquitecturas de software y metodologías ágiles.",
-        "tags": ["Agile", "Software Architecture", "Cloud Computing"]
+        "tags": [
+          "Agile",
+          "Software Architecture",
+          "Cloud Computing"
+        ]
       },
       "degree2": {
         "title": "Grado en Ciencias de la Computación",
         "organization": "Universidad Estatal",
         "period": "2013 - 2017",
         "description": "Fundamentos de programación, estructuras de datos y algoritmos.",
-        "tags": ["Java", "Data Structures", "Algorithms", "Database Systems"]
+        "tags": [
+          "Java",
+          "Data Structures",
+          "Algorithms",
+          "Database Systems"
+        ]
       }
     }
   },
@@ -150,5 +186,9 @@
       "resume": "Trayectoria",
       "contact": "Contacto"
     }
+  },
+  "sidebar": {
+    "sheetTitle": "Menu de Navegación",
+    "sheetDescription": "Navega a través de las secciones de mi Portfolio"
   }
 }

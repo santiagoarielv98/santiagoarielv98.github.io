@@ -60,6 +60,8 @@ export function Nav() {
   const [, startTransition] = React.useTransition();
 
   const t = useTranslations("nav");
+  const a11y = useTranslations("accessibility");
+
   const { toast } = useToast();
   const [activeSection, setActiveSection] = React.useState("/");
   const locale = useLocale();
@@ -99,7 +101,7 @@ export function Nav() {
           <Link
             key={item.href}
             href={item.href}
-            aria-label={t(`ariaLabel.${item.name}`)}
+            aria-label={a11y(`ariaLabel.${item.name}`)}
             className={cn(
               "flex h-9 items-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-accent-foreground",
               activeSection === item.href &&

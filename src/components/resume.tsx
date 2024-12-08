@@ -8,10 +8,7 @@ function TimelineSection({ title, items }: { title: string; items: string[] }) {
 
   return (
     <div className="mb-8">
-      <h3
-        className="mb-4 text-2xl font-bold"
-        aria-label={a11y(`ariaLabel.${title}`)}
-      >
+      <h3 className="mb-4 text-2xl font-bold" aria-label={title}>
         {title}
       </h3>
       <div className="space-y-4">

@@ -5,13 +5,20 @@ import { Slot } from "@radix-ui/react-slot";
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
 import { PanelLeft } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { Sheet, SheetContent } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
   Tooltip,
@@ -185,21 +192,7 @@ const Sidebar = React.forwardRef<
     ref,
   ) => {
     const { isMobile, state, openMobile, setOpenMobile } = useSidebar();
-
-    if (collapsible === "none") {
-      return (
-        <div
-          className={cn(
-            "flex h-full w-[--sidebar-width] flex-col bg-sidebar text-sidebar-foreground",
-            className,
-          )}
-          ref={ref}
-          {...props}
-        >
-          {children}
-        </div>
-      );
-    }
+    const t = useTranslations("sidebar");
 
     if (isMobile) {
       return (
@@ -215,6 +208,10 @@ const Sidebar = React.forwardRef<
             }
             side={side}
           >
+            <SheetHeader>
+              <SheetTitle>{t("sheetTitle")}</SheetTitle>
+              <SheetDescription>{t("sheetDescription")}</SheetDescription>
+            </SheetHeader>
             <div className="flex h-full w-full flex-col">{children}</div>
           </SheetContent>
         </Sheet>

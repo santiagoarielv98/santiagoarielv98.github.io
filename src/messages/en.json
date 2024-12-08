@@ -37,17 +37,32 @@
       "project1": {
         "title": "Project 1",
         "description": "A web application built with React and Next.js",
-        "technologies": ["React", "Next.js", "Tailwind CSS", "TypeScript"]
+        "technologies": [
+          "React",
+          "Next.js",
+          "Tailwind CSS",
+          "TypeScript"
+        ]
       },
       "project2": {
         "title": "Project 2",
         "description": "An e-commerce site with payment integration",
-        "technologies": ["Vue.js", "Nuxt.js", "Stripe", "MongoDB"]
+        "technologies": [
+          "Vue.js",
+          "Nuxt.js",
+          "Stripe",
+          "MongoDB"
+        ]
       },
       "project3": {
         "title": "Project 3",
         "description": "A mobile application developed with React Native",
-        "technologies": ["React Native", "Expo", "Firebase", "Redux"]
+        "technologies": [
+          "React Native",
+          "Expo",
+          "Firebase",
+          "Redux"
+        ]
       }
     }
   },
@@ -61,14 +76,26 @@
         "organization": "Tech Innovators Inc.",
         "period": "2021 - Present",
         "description": "Led the development of scalable web applications using React, Node.js, and AWS.",
-        "tags": ["React", "Node.js", "AWS", "Docker", "GraphQL"]
+        "tags": [
+          "React",
+          "Node.js",
+          "AWS",
+          "Docker",
+          "GraphQL"
+        ]
       },
       "job2": {
         "title": "Front-end Developer",
         "organization": "Creative Web Solutions",
         "period": "2018 - 2021",
         "description": "Developed responsive and accessible user interfaces for clients from various sectors.",
-        "tags": ["JavaScript", "React", "CSS", "Webpack", "Jest"]
+        "tags": [
+          "JavaScript",
+          "React",
+          "CSS",
+          "Webpack",
+          "Jest"
+        ]
       }
     },
     "educationList": {
@@ -77,14 +104,23 @@
         "organization": "Technological University",
         "period": "2017 - 2018",
         "description": "Specialization in software architectures and agile methodologies.",
-        "tags": ["Agile", "Software Architecture", "Cloud Computing"]
+        "tags": [
+          "Agile",
+          "Software Architecture",
+          "Cloud Computing"
+        ]
       },
       "degree2": {
         "title": "Bachelor's in Computer Science",
         "organization": "State University",
         "period": "2013 - 2017",
         "description": "Fundamentals of programming, data structures, and algorithms.",
-        "tags": ["Java", "Data Structures", "Algorithms", "Database Systems"]
+        "tags": [
+          "Java",
+          "Data Structures",
+          "Algorithms",
+          "Database Systems"
+        ]
       }
     }
   },
@@ -150,5 +186,9 @@
       "resume": "Resume",
       "contact": "Contact"
     }
+  },
+  "sidebar": {
+    "sheetTitle": "Navigation Menu",
+    "sheetDescription": "Navigate through the sections of my Portfolio"
   }
 }
