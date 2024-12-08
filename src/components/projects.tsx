@@ -14,12 +14,19 @@ import Link from "next/link";
 
 export default function Projects() {
   const t = useTranslations("projects");
+  const a11y = useTranslations("accessibility");
   const keys = ["project1", "project2", "project3"];
 
   return (
-    <section id="projects" className="px-6 py-16">
+    <section
+      id="projects"
+      className="px-6 py-16"
+      aria-labelledby="projects-title"
+    >
       <div className="mx-auto max-w-6xl">
-        <h2 className="mb-8 text-center text-3xl font-bold">{t("title")}</h2>
+        <h2 id="projects-title" className="mb-8 text-center text-3xl font-bold">
+          {t("title")}
+        </h2>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {keys.map((key, index) => (
             <Card key={index} className="flex flex-col overflow-hidden">
@@ -51,14 +58,19 @@ export default function Projects() {
               </CardContent>
               <CardFooter className="flex justify-between">
                 <Button variant="outline" size="sm" asChild>
-                  <Link href="#" target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={a11y("ariaLabel.github")}
+                  >
                     <Github className="mr-2 h-4 w-4" />
                     {t("repo")}
                   </Link>
                 </Button>
                 {/* {project.demo && (
                   <Button variant="outline" size="sm" asChild>
-                    <Link href={project.demo} target="_blank" rel="noopener noreferrer">
+                    <Link href={project.demo} target="_blank" rel="noopener noreferrer" aria-label={a11y("ariaLabel.demo")}>
                       <ExternalLink className="mr-2 h-4 w-4" />
                       {t('demo')}
                     </Link>

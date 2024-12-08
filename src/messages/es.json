@@ -123,5 +123,32 @@
     "light": "Claro",
     "dark": "Oscuro",
     "system": "Sistema"
+  },
+  "accessibility": {
+    "skipToContent": "Saltar al contenido",
+    "ariaLabel": {
+      "phone": "Teléfono",
+      "email": "Correo electrónico",
+      "location": "Ubicación",
+      "website": "Sitio web",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "whatsapp": "WhatsApp",
+      "workExperience": "Experiencia Laboral",
+      "education": "Educación",
+      "jobTitle": "Título del trabajo",
+      "organization": "Organización",
+      "period": "Período",
+      "description": "Descripción",
+      "skills": "Habilidades",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "cloud": "Cloud",
+      "home": "Inicio",
+      "about": "Sobre mí",
+      "projects": "Proyectos",
+      "resume": "Trayectoria",
+      "contact": "Contacto"
+    }
   }
 }

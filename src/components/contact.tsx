@@ -14,42 +14,43 @@ import { Github, Linkedin, Phone, Mail, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useTranslations } from "next-intl";
 
-const contactInfo = [
-  {
-    icon: Github,
-    label: "GitHub",
-    value: "github.com/tuusuario",
-    href: "https://github.com/tuusuario",
-  },
-  {
-    icon: Linkedin,
-    label: "LinkedIn",
-    value: "linkedin.com/in/tuusuario",
-    href: "https://linkedin.com/in/tuusuario",
-  },
-  {
-    icon: MessageCircle,
-    label: "WhatsApp",
-    value: "+1234567890",
-    href: "https://wa.me/1234567890",
-  },
-  {
-    icon: Phone,
-    label: "Teléfono",
-    value: "+1234567890",
-    href: "tel:+1234567890",
-  },
-  {
-    icon: Mail,
-    label: "Email",
-    value: "tu@email.com",
-    href: "mailto:tu@email.com",
-  },
-];
-
 export default function Contact() {
   const { toast } = useToast();
   const t = useTranslations("contact");
+  const a11y = useTranslations("accessibility");
+
+  const contactInfo = [
+    {
+      icon: Github,
+      label: a11y("ariaLabel.github"),
+      value: "github.com/tuusuario",
+      href: "https://github.com/tuusuario",
+    },
+    {
+      icon: Linkedin,
+      label: a11y("ariaLabel.linkedin"),
+      value: "linkedin.com/in/tuusuario",
+      href: "https://linkedin.com/in/tuusuario",
+    },
+    {
+      icon: MessageCircle,
+      label: a11y("ariaLabel.whatsapp"),
+      value: "+1234567890",
+      href: "https://wa.me/1234567890",
+    },
+    {
+      icon: Phone,
+      label: a11y("ariaLabel.phone"),
+      value: "+1234567890",
+      href: "tel:+1234567890",
+    },
+    {
+      icon: Mail,
+      label: a11y("ariaLabel.email"),
+      value: "tu@email.com",
+      href: "mailto:tu@email.com",
+    },
+  ];
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -61,9 +62,15 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-muted px-6 py-16">
+    <section
+      id="contact"
+      className="bg-muted px-6 py-16"
+      aria-labelledby="contact-title"
+    >
       <div className="mx-auto max-w-4xl">
-        <h2 className="mb-8 text-center text-3xl font-bold">{t("title")}</h2>
+        <h2 id="contact-title" className="mb-8 text-center text-3xl font-bold">
+          {t("title")}
+        </h2>
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           <Card>
             <CardHeader>
@@ -79,8 +86,9 @@ export default function Contact() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center space-x-2 text-sm transition-colors hover:text-primary"
+                      aria-label={item.label}
                     >
-                      <item.icon className="h-5 w-5" />
+                      <item.icon className="h-5 w-5" aria-hidden="true" />
                       <span>{item.label}:</span>
                       <span className="font-medium">{item.value}</span>
                     </a>
@@ -95,7 +103,11 @@ export default function Contact() {
               <CardDescription>{t("formDescription")}</CardDescription>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form
+                onSubmit={handleSubmit}
+                className="space-y-4"
+                aria-labelledby="contact-form-title"
+              >
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium">
                     {t("formLabels.name")}
@@ -104,6 +116,7 @@ export default function Contact() {
                     id="name"
                     placeholder={t("formLabels.name")}
                     required
+                    aria-required="true"
                   />
                 </div>
                 <div className="space-y-2">
@@ -115,6 +128,7 @@ export default function Contact() {
                     type="email"
                     placeholder={t("formLabels.email")}
                     required
+                    aria-required="true"
                   />
                 </div>
                 <div className="space-y-2">
@@ -125,6 +139,7 @@ export default function Contact() {
                     id="message"
                     placeholder={t("formLabels.message")}
                     required
+                    aria-required="true"
                   />
                 </div>
                 <Button type="submit" className="w-full">

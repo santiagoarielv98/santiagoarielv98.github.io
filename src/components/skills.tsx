@@ -17,6 +17,7 @@ type SkillCategory = {
 
 export default function Skills() {
   const t = useTranslations("skills");
+  const a11y = useTranslations("accessibility");
   const skillsData: SkillCategory[] = [
     {
       title: t("categories.frontend.title"),
@@ -54,16 +55,27 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="px-6 py-16">
+    <section id="skills" className="px-6 py-16" aria-labelledby="skills-title">
       <div className="mx-auto max-w-6xl">
-        <h2 className="mb-8 text-center text-3xl font-bold">{t("title")}</h2>
+        <h2 id="skills-title" className="mb-8 text-center text-3xl font-bold">
+          {t("title")}
+        </h2>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {skillsData.map((category, index) => (
             <Card key={index}>
               <CardHeader>
                 <div className="flex items-center space-x-2">
-                  <category.icon className="h-6 w-6 text-primary" />
-                  <CardTitle>{category.title}</CardTitle>
+                  <category.icon
+                    className="h-6 w-6 text-primary"
+                    aria-hidden="true"
+                  />
+                  <CardTitle
+                    aria-label={a11y(
+                      `ariaLabel.${category.title.toLowerCase()}`,
+                    )}
+                  >
+                    {category.title}
+                  </CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
@@ -74,9 +86,10 @@ export default function Skills() {
                       key={skillIndex}
                       variant="secondary"
                       className="flex items-center gap-1 px-2 py-1"
+                      aria-label={skill.name}
                     >
                       <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary p-1 text-primary-foreground">
-                        <skill.icon className="h-3 w-3" />
+                        <skill.icon className="h-3 w-3" aria-hidden="true" />
                       </span>
                       {skill.name}
                     </Badge>

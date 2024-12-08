@@ -123,5 +123,32 @@
     "light": "Light",
     "dark": "Dark",
     "system": "System"
+  },
+  "accessibility": {
+    "skipToContent": "Skip to content",
+    "ariaLabel": {
+      "phone": "Phone",
+      "email": "Email",
+      "location": "Location",
+      "website": "Website",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "whatsapp": "WhatsApp",
+      "workExperience": "Work Experience",
+      "education": "Education",
+      "jobTitle": "Job Title",
+      "organization": "Organization",
+      "period": "Period",
+      "description": "Description",
+      "skills": "Skills",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "cloud": "Cloud",
+      "home": "Home",
+      "about": "About Me",
+      "projects": "Projects",
+      "resume": "Resume",
+      "contact": "Contact"
+    }
   }
 }

@@ -99,6 +99,7 @@ export function Nav() {
           <Link
             key={item.href}
             href={item.href}
+            aria-label={t(`ariaLabel.${item.name}`)}
             className={cn(
               "flex h-9 items-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-accent-foreground",
               activeSection === item.href &&
@@ -111,19 +112,20 @@ export function Nav() {
         ))}
         <Link
           href="/path-to-your-cv.pdf"
+          aria-label={t("downloadCV")}
           className="flex h-9 items-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
           download
           onClick={(e) => {
             e.preventDefault();
             toast({
-              title: "Descargando CV",
-              description: "Tu CV se está descargando.",
+              title: t("downloadingCV.title"),
+              description: t("downloadingCV.description"),
             });
             // Aquí iría la lógica real de descarga
           }}
         >
           <Download className="mr-2 h-4 w-4" />
-          Descargar CV
+          {t("downloadCV")}
         </Link>
       </>
     ),
@@ -135,7 +137,6 @@ export function Nav() {
       <Sidebar>
         <SidebarHeader className="border-b px-6 py-4">
           <Link href="/" className="text-2xl font-bold">
-            {/* {language === 'es' ? 'Mi Portfolio' : 'My Portfolio'} */}
             {t("portfolio")}
           </Link>
         </SidebarHeader>
