@@ -13,6 +13,7 @@ import {
 import { Github, Linkedin, Phone, Mail, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export default function Contact() {
   const { toast } = useToast();
@@ -67,12 +68,12 @@ export default function Contact() {
       className="bg-muted px-6 py-16"
       aria-labelledby="contact-title"
     >
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-6xl">
         <h2 id="contact-title" className="mb-8 text-center text-3xl font-bold">
           {t("title")}
         </h2>
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-          <Card>
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
+          <Card className="lg:col-span-5">
             <CardHeader>
               <CardTitle>{t("contactInfoTitle")}</CardTitle>
               <CardDescription>{t("contactInfoDescription")}</CardDescription>
@@ -81,23 +82,25 @@ export default function Contact() {
               <ul className="space-y-4">
                 {contactInfo.map((item, index) => (
                   <li key={index}>
-                    <a
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center space-x-2 text-sm transition-colors hover:text-primary"
-                      aria-label={item.label}
-                    >
-                      <item.icon className="h-5 w-5" aria-hidden="true" />
-                      <span>{item.label}:</span>
-                      <span className="font-medium">{item.value}</span>
-                    </a>
+                    <Button asChild variant="ghost">
+                      <Link
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="space-x-2 text-sm"
+                        aria-label={item.label}
+                      >
+                        <item.icon className="h-5 w-5" aria-hidden="true" />
+                        <span>{item.label}:</span>
+                        <span className="font-medium">{item.value}</span>
+                      </Link>
+                    </Button>
                   </li>
                 ))}
               </ul>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="lg:col-span-7">
             <CardHeader>
               <CardTitle>{t("formTitle")}</CardTitle>
               <CardDescription>{t("formDescription")}</CardDescription>
@@ -132,7 +135,7 @@ export default function Contact() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">
+                  <label htmlFor="me  ssage" className="text-sm font-medium">
                     {t("formLabels.message")}
                   </label>
                   <Textarea

@@ -20,10 +20,10 @@ export default function Home() {
         <Skills />
       </AnimatedSection>
       <AnimatedSection>
-        <Projects />
+        <Resume />
       </AnimatedSection>
       <AnimatedSection>
-        <Resume />
+        <Projects />
       </AnimatedSection>
       <AnimatedSection>
         <Contact />

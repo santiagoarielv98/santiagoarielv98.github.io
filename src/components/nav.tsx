@@ -44,8 +44,8 @@ const navItems = [
   { name: "home", href: "/", icon: Home },
   { name: "about", href: "/#about", icon: User },
   { name: "skills", href: "/#skills", icon: Code },
-  { name: "projects", href: "/#projects", icon: Briefcase },
   { name: "resume", href: "/#resume", icon: FileText },
+  { name: "projects", href: "/#projects", icon: Briefcase },
   { name: "contact", href: "/#contact", icon: Mail },
 ];
 
@@ -145,7 +145,8 @@ export function Nav() {
         <SidebarContent className="px-4 py-6">
           <NavContent />
         </SidebarContent>
-        <SidebarFooter className="border-t px-6 py-4">
+        <Separator />
+        <SidebarFooter className="px-6 py-4">
           <div className="flex justify-center space-x-2">
             {socialItems.map((item, index) => (
               <Button key={index} variant="ghost" size="icon" asChild>
@@ -162,7 +163,7 @@ export function Nav() {
           </div>
         </SidebarFooter>
         <Separator />
-        <SidebarFooter>
+        <SidebarFooter className="px-6 py-4">
           <div className="flex w-full items-center justify-between">
             <ThemeToggle />
             <DropdownMenu>

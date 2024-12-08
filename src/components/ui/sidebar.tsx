@@ -208,9 +208,11 @@ const Sidebar = React.forwardRef<
             }
             side={side}
           >
-            <SheetHeader>
-              <SheetTitle>{t("sheetTitle")}</SheetTitle>
-              <SheetDescription>{t("sheetDescription")}</SheetDescription>
+            <SheetHeader className="sr-only">
+              <SheetTitle aria-hidden="true">{t("sheetTitle")}</SheetTitle>
+              <SheetDescription aria-hidden="true">
+                {t("sheetDescription")}
+              </SheetDescription>
             </SheetHeader>
             <div className="flex h-full w-full flex-col">{children}</div>
           </SheetContent>
