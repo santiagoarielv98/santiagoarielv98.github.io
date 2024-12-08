@@ -17,10 +17,10 @@ export default function Projects() {
   const keys = ["project1", "project2", "project3"];
 
   return (
-    <section id="projects" className="py-16 px-6">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-center">{t("title")}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section id="projects" className="px-6 py-16">
+      <div className="mx-auto max-w-6xl">
+        <h2 className="mb-8 text-center text-3xl font-bold">{t("title")}</h2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {keys.map((key, index) => (
             <Card key={index} className="flex flex-col overflow-hidden">
               <div className="relative h-48 w-full">
@@ -40,7 +40,7 @@ export default function Projects() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex-grow">
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="mb-4 flex flex-wrap gap-2">
                   {/* {project.technologies.map((tech, techIndex) => (
                     <Badge key={techIndex} variant="secondary" className="flex items-center gap-1">
                       <Code className="h-3 w-3" />

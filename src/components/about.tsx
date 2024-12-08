@@ -5,10 +5,10 @@ import { useTranslations } from "next-intl";
 export default function About() {
   const t = useTranslations("about");
   return (
-    <section id="about" className="py-16 px-6 bg-muted">
-      <div className="max-w-4xl mx-auto">
-        <div className="flex flex-col items-center md:items-start md:flex-row gap-8">
-          <div className="w-48 h-48 relative overflow-hidden rounded-full mx-auto md:mx-0">
+    <section id="about" className="bg-muted px-6 py-16">
+      <div className="mx-auto max-w-4xl">
+        <div className="flex flex-col items-center gap-8 md:flex-row md:items-start">
+          <div className="relative mx-auto h-48 w-48 overflow-hidden rounded-full md:mx-0">
             <Image
               src="/next.svg"
               alt="Tu nombre"
@@ -16,11 +16,11 @@ export default function About() {
               objectFit="cover"
             />
           </div>
-          <div className="flex-1 w-full">
-            <h2 className="text-3xl font-bold mb-4 text-center md:text-left">
+          <div className="w-full flex-1">
+            <h2 className="mb-4 text-center text-3xl font-bold md:text-left">
               {t("title")}
             </h2>
-            <p className="text-lg mb-6 text-center md:text-left">
+            <p className="mb-6 text-center text-lg md:text-left">
               {t("description")}
             </p>
             <div className="grid grid-cols-1 gap-4">

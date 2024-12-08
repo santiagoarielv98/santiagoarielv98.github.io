@@ -54,10 +54,10 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-16 px-6">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-center">{t("title")}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section id="skills" className="px-6 py-16">
+      <div className="mx-auto max-w-6xl">
+        <h2 className="mb-8 text-center text-3xl font-bold">{t("title")}</h2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {skillsData.map((category, index) => (
             <Card key={index}>
               <CardHeader>
@@ -75,7 +75,7 @@ export default function Skills() {
                       variant="secondary"
                       className="flex items-center gap-1 px-2 py-1"
                     >
-                      <span className="flex items-center justify-center bg-primary text-primary-foreground rounded-full p-1 w-5 h-5">
+                      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary p-1 text-primary-foreground">
                         <skill.icon className="h-3 w-3" />
                       </span>
                       {skill.name}

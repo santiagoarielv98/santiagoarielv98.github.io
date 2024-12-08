@@ -36,7 +36,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { useToast } from "@/hooks/use-toast";
-import { Locale } from "@/i18n/config";
+import type { Locale } from "@/i18n/config";
 import { cn } from "@/lib/utils";
 import { useLocale, useTranslations } from "next-intl";
 
@@ -100,7 +100,7 @@ export function Nav() {
             key={item.href}
             href={item.href}
             className={cn(
-              "flex items-center text-sm font-medium text-muted-foreground rounded-md hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-accent-foreground h-9 px-3 py-2",
+              "flex h-9 items-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-accent-foreground",
               activeSection === item.href &&
                 "bg-accent/50 text-accent-foreground",
             )}
@@ -111,7 +111,7 @@ export function Nav() {
         ))}
         <Link
           href="/path-to-your-cv.pdf"
-          className="flex items-center text-sm font-medium text-muted-foreground rounded-md hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 h-9 px-3 py-2"
+          className="flex h-9 items-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
           download
           onClick={(e) => {
             e.preventDefault();
@@ -160,7 +160,7 @@ export function Nav() {
         </SidebarFooter>
         <Separator />
         <SidebarFooter>
-          <div className="flex items-center justify-between w-full">
+          <div className="flex w-full items-center justify-between">
             <ThemeToggle />
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -198,7 +198,7 @@ export function Nav() {
           </div>
         </SidebarFooter>
       </Sidebar>
-      <SidebarTrigger className="fixed top-4 left-4 z-50 md:hidden">
+      <SidebarTrigger className="fixed left-4 top-4 z-50 md:hidden">
         <Button variant="outline" size="icon">
           <Menu className="h-5 w-5" />
           <span className="sr-only">Toggle menu</span>

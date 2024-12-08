@@ -61,10 +61,10 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 px-6 bg-muted">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-center">{t("title")}</h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <section id="contact" className="bg-muted px-6 py-16">
+      <div className="mx-auto max-w-4xl">
+        <h2 className="mb-8 text-center text-3xl font-bold">{t("title")}</h2>
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           <Card>
             <CardHeader>
               <CardTitle>{t("contactInfoTitle")}</CardTitle>
@@ -78,7 +78,7 @@ export default function Contact() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center space-x-2 text-sm hover:text-primary transition-colors"
+                      className="flex items-center space-x-2 text-sm transition-colors hover:text-primary"
                     >
                       <item.icon className="h-5 w-5" />
                       <span>{item.label}:</span>
