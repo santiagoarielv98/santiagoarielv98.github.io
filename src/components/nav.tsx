@@ -131,7 +131,7 @@ export function Nav() {
         </Link>
       </>
     ),
-    [activeSection, toast, t],
+    [activeSection, t, a11y, toast],
   );
 
   return (

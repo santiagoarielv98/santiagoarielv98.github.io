@@ -6,7 +6,7 @@ export default function Hero() {
   const a11y = useTranslations("accessibility");
   return (
     <section
-      className="bg-[url('/next.svg')] bg-cover bg-center px-6 py-24 text-center text-white min-h-[90vh] flex items-center justify-center"
+      className="flex min-h-[90vh] items-center justify-center bg-[url('/next.svg')] bg-cover bg-center px-6 py-24 text-center text-white"
       aria-labelledby="hero-title"
     >
       <div className="mx-auto max-w-3xl rounded-lg bg-black bg-opacity-50 p-8">
