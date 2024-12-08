@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Github, Linkedin, Phone, Mail, MessageCircle } from 'lucide-react'
 import { useToast } from "@/hooks/use-toast"
+import { useTranslations } from 'next-intl'
 
 const contactInfo = [
   { icon: Github, label: 'GitHub', value: 'github.com/tuusuario', href: 'https://github.com/tuusuario' },
@@ -17,25 +18,26 @@ const contactInfo = [
 
 export default function Contact() {
   const { toast } = useToast()
+  const t = useTranslations("contact")
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     // Aquí iría la lógica real de envío del formulario
     toast({
-      title: "Formulario enviado",
-      description: "Gracias por tu mensaje. Me pondré en contacto contigo pronto.",
+      title: t("formSuccessTitle"),
+      description: t("formSuccessDescription"),
     })
   }
 
   return (
     <section id="contact" className="py-16 px-6 bg-muted">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-center">Contáctame</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center">{t('title')}</h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <Card>
             <CardHeader>
-              <CardTitle>Información de Contacto</CardTitle>
-              <CardDescription>Encuéntrame en las siguientes plataformas</CardDescription>
+              <CardTitle>{t('contactInfoTitle')}</CardTitle>
+              <CardDescription>{t('contactInfoDescription')}</CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-4">
@@ -58,24 +60,24 @@ export default function Contact() {
           </Card>
           <Card>
             <CardHeader>
-              <CardTitle>Envíame un mensaje</CardTitle>
-              <CardDescription>Completa el formulario y me pondré en contacto contigo pronto</CardDescription>
+              <CardTitle>{t('formTitle')}</CardTitle>
+              <CardDescription>{t('formDescription')}</CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium">Nombre</label>
-                  <Input id="name" placeholder="Tu nombre" required />
+                  <label htmlFor="name" className="text-sm font-medium">{t('formLabels.name')}</label>
+                  <Input id="name" placeholder={t('formLabels.name')} required />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium">Email</label>
-                  <Input id="email" type="email" placeholder="tu@email.com" required />
+                  <label htmlFor="email" className="text-sm font-medium">{t('formLabels.email')}</label>
+                  <Input id="email" type="email" placeholder={t('formLabels.email')} required />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">Mensaje</label>
-                  <Textarea id="message" placeholder="Tu mensaje" required />
+                  <label htmlFor="message" className="text-sm font-medium">{t('formLabels.message')}</label>
+                  <Textarea id="message" placeholder={t('formLabels.message')} required />
                 </div>
-                <Button type="submit" className="w-full">Enviar mensaje</Button>
+                <Button type="submit" className="w-full">{t('formSubmit')}</Button>
               </form>
             </CardContent>
           </Card>

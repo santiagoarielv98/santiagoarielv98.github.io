@@ -1,7 +1,9 @@
 import Image from 'next/image'
 import { Phone, Mail, MapPin, Globe } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 export default function About() {
+  const t = useTranslations("about")
   return (
     <section id="about" className="py-16 px-6 bg-muted">
       <div className="max-w-4xl mx-auto">
@@ -15,27 +17,26 @@ export default function About() {
             />
           </div>
           <div className="flex-1 w-full">
-            <h2 className="text-3xl font-bold mb-4 text-center md:text-left">Sobre mí</h2>
+            <h2 className="text-3xl font-bold mb-4 text-center md:text-left">{t('title')}</h2>
             <p className="text-lg mb-6 text-center md:text-left">
-              Soy un desarrollador web con experiencia en React, Next.js y diseño UI/UX. 
-              Me apasiona crear aplicaciones web rápidas, accesibles y fáciles de usar.
+              {t('description')}
             </p>
             <div className="grid grid-cols-1 gap-4">
               <div className="flex items-center space-x-2">
                 <Phone className="h-5 w-5 text-primary" />
-                <span>+1 234 567 890</span>
+                <span>{t('phone')}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-5 w-5 text-primary" />
-                <span>tucorreo@ejemplo.com</span>
+                <span>{t('email')}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-5 w-5 text-primary" />
-                <span>Tu Ciudad, País</span>
+                <span>{t('location')}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Globe className="h-5 w-5 text-primary" />
-                <span>www.tuwebsite.com</span>
+                <span>{t('website')}</span>
               </div>
             </div>
           </div>

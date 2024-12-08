@@ -1,0 +1,127 @@
+{
+  "hero": {
+    "welcome": "Bienvenido a mi Portfolio",
+    "description": "Soy un desarrollador web apasionado por crear experiencias digitales increíbles.",
+    "button": "Ver mis proyectos"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "description": "Soy un desarrollador web con experiencia en React, Next.js y diseño UI/UX. Me apasiona crear aplicaciones web rápidas, accesibles y fáciles de usar.",
+    "phone": "+1 234 567 890",
+    "email": "tucorreo@ejemplo.com",
+    "location": "Tu Ciudad, País",
+    "website": "www.tuwebsite.com"
+  },
+  "skills": {
+    "title": "Mis Habilidades",
+    "categories": {
+      "frontend": {
+        "title": "Frontend",
+        "description": "Desarrollo de interfaces de usuario interactivas y responsivas."
+      },
+      "backend": {
+        "title": "Backend",
+        "description": "Creación de APIs robustas y escalables."
+      },
+      "cloud": {
+        "title": "Cloud",
+        "description": "Despliegue y gestión de aplicaciones en la nube."
+      }
+    }
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "repo": "Repo",
+    "demo": "Demo",
+    "projectsList": {
+      "project1": {
+        "title": "Proyecto 1",
+        "description": "Una aplicación web construida con React y Next.js",
+        "technologies": ["React", "Next.js", "Tailwind CSS", "TypeScript"]
+      },
+      "project2": {
+        "title": "Proyecto 2",
+        "description": "Un sitio de comercio electrónico con integración de pagos",
+        "technologies": ["Vue.js", "Nuxt.js", "Stripe", "MongoDB"]
+      },
+      "project3": {
+        "title": "Proyecto 3",
+        "description": "Una aplicación móvil desarrollada con React Native",
+        "technologies": ["React Native", "Expo", "Firebase", "Redux"]
+      }
+    }
+  },
+  "resume": {
+    "title": "Mi Trayectoria",
+    "workExperience": "Experiencia Laboral",
+    "education": "Educación",
+    "workExperienceList": {
+      "job1": {
+        "title": "Desarrollador Full Stack Senior",
+        "organization": "Tech Innovators Inc.",
+        "period": "2021 - Presente",
+        "description": "Lideré el desarrollo de aplicaciones web escalables utilizando React, Node.js y AWS.",
+        "tags": ["React", "Node.js", "AWS", "Docker", "GraphQL"]
+      },
+      "job2": {
+        "title": "Desarrollador Front-end",
+        "organization": "Creative Web Solutions",
+        "period": "2018 - 2021",
+        "description": "Desarrollé interfaces de usuario responsivas y accesibles para clientes de diversos sectores.",
+        "tags": ["JavaScript", "React", "CSS", "Webpack", "Jest"]
+      }
+    },
+    "educationList": {
+      "degree1": {
+        "title": "Máster en Ingeniería de Software",
+        "organization": "Universidad Tecnológica",
+        "period": "2017 - 2018",
+        "description": "Especialización en arquitecturas de software y metodologías ágiles.",
+        "tags": ["Agile", "Software Architecture", "Cloud Computing"]
+      },
+      "degree2": {
+        "title": "Grado en Ciencias de la Computación",
+        "organization": "Universidad Estatal",
+        "period": "2013 - 2017",
+        "description": "Fundamentos de programación, estructuras de datos y algoritmos.",
+        "tags": ["Java", "Data Structures", "Algorithms", "Database Systems"]
+      }
+    }
+  },
+  "contact": {
+    "title": "Contáctame",
+    "contactInfoTitle": "Información de Contacto",
+    "contactInfoDescription": "Encuéntrame en las siguientes plataformas",
+    "formTitle": "Envíame un mensaje",
+    "formDescription": "Completa el formulario y me pondré en contacto contigo pronto",
+    "formLabels": {
+      "name": "Nombre",
+      "email": "Email",
+      "message": "Mensaje"
+    },
+    "formSubmit": "Enviar mensaje",
+    "formSuccessTitle": "Formulario enviado",
+    "formSuccessDescription": "Gracias por tu mensaje. Me pondré en contacto contigo pronto."
+  },
+  "nav": {
+    "portfolio": "Mi Portfolio",
+    "downloadCV": "Descargar CV",
+    "downloadingCV": {
+      "title": "Descargando CV",
+      "description": "Tu CV se está descargando."
+    },
+    "sections": {
+      "home": "Inicio",
+      "about": "Sobre mí",
+      "skills": "Habilidades",
+      "projects": "Proyectos",
+      "resume": "Trayectoria",
+      "contact": "Contacto"
+    }
+  },
+  "themeToggle": {
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema"
+  }
+}
