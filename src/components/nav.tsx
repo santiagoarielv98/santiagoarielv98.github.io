@@ -137,7 +137,7 @@ export function Nav() {
             priority
           />
           <Link href="/" className="text-2xl font-bold">
-            {t("portfolio")}
+            {`${me.name} ${me.lastName}`}
           </Link>
         </SidebarHeader>
         <SidebarContent className="px-4 py-6">
