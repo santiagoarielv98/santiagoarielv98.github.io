@@ -1,15 +1,13 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { me } from "@/globals/info";
+import { Download } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 export default function Hero() {
   const t = useTranslations("hero");
   const a11y = useTranslations("accessibility");
-
-  const handleSkipToContent = () => {
-    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <section
@@ -21,12 +19,16 @@ export default function Hero() {
           {t("welcome")}
         </h1>
         <p className="mb-8 text-xl">{t("description")}</p>
-        <Button
-          variant="secondary"
-          aria-label={a11y("skipToContent")}
-          onClick={handleSkipToContent}
-        >
-          {t("button")}
+        <Button variant="secondary" aria-label={a11y("skipToContent")} asChild>
+          <a
+            download={me.cv.download}
+            href={me.cv.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Download className="h-5 w-5" aria-hidden="true" />
+            {t("button")}
+          </a>
         </Button>
       </div>
     </section>

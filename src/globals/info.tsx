@@ -49,6 +49,11 @@ export const me = {
       label: "santiagoarielv98.vercel.app",
     },
   },
+  cv: {
+    href: "/assets/docs/SantiagoArielVillanuevaResume.pdf",
+    label: "Santiago Ariel Villanueva Resume",
+    download: "SantiagoArielVillanuevaResume.pdf",
+  },
 };
 
 export const contactInfo = [
