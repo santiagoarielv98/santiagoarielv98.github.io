@@ -34,10 +34,9 @@ export default function Projects() {
               <Image
                 src={item.image}
                 alt={t(`projectsList.${name}.title`)}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-t-lg"
-                sizes="(min-width: 640px) 33.3vw, (min-width: 1024px) 25vw, 50vw"
+                width={360}
+                height={180}
+                className="h-auto w-full rounded-t-lg"
               />
             </div>
             <CardHeader>

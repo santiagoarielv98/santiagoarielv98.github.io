@@ -13,8 +13,33 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Mi Portfolio",
-  description: "Portfolio personal de desarrollo web",
+  title: "SV ~ Portfolio",
+  description:
+    "Bienvenido a mi portfolio, aquí podrás encontrar información sobre mi experiencia, proyectos y habilidades.",
+  keywords:
+    "santiago villanueva, portfolio, frontend developer, web developer, react, javascript, typescript, html, css",
+  openGraph: {
+    title: "Portafolio de Santiago Villanueva",
+    description:
+      "Portafolio de Santiago Villanueva, desarrollador full stack especializado en React, Angular, Java y Spring Boot.",
+    images: [{ url: "/hello-world.webp" }],
+    url: "https://santiagoarielv98.vercel.app/",
+    type: "website",
+    locale: "es_ES",
+    siteName: "SV Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portafolio de Santiago Villanueva",
+    description:
+      "Portafolio de Santiago Villanueva, desarrollador full stack especializado en React, Angular, Java y Spring Boot.",
+    images: [{ url: "/hello-world.webp" }],
+    creator: "@santiagoarielv98",
+  },
+  robots: "index, follow",
+  alternates: {
+    canonical: "https://santiagoarielv98.vercel.app/",
+  },
 };
 
 export default async function RootLayout({

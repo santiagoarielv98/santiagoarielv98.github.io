@@ -129,7 +129,7 @@ export function Nav() {
       <Sidebar>
         <SidebarHeader className="flex flex-col items-center space-y-4 border-b py-4">
           <Image
-            src="/assets/img/profile-350x350.webp"
+            src={me.image.sm}
             width={96}
             height={96}
             alt="Mi Foto"

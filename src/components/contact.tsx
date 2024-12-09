@@ -90,6 +90,7 @@ export default function Contact() {
                     placeholder={t("formLabels.name")}
                     required
                     aria-required="true"
+                    autoComplete="name"
                   />
                 </div>
                 <div className="space-y-2">
@@ -102,10 +103,11 @@ export default function Contact() {
                     placeholder={t("formLabels.email")}
                     required
                     aria-required="true"
+                    autoComplete="email"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="me  ssage" className="text-sm font-medium">
+                  <label htmlFor="message" className="text-sm font-medium">
                     {t("formLabels.message")}
                   </label>
                   <Textarea

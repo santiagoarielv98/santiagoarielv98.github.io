@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Phone, Mail, MapPin, Globe } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { me } from "@/globals/info";
 
 export default function About() {
   const t = useTranslations("about");
@@ -15,10 +16,11 @@ export default function About() {
         <div className="flex flex-col items-center gap-8 md:flex-row md:items-start">
           <div className="relative mx-auto h-48 w-48 overflow-hidden rounded-full md:mx-0">
             <Image
-              src="/assets/img/profile-350x350.webp"
-              alt="Tu nombre"
-              layout="fill"
-              objectFit="cover"
+              src={me.image.sm}
+              alt="Mi Foto de Perfil"
+              priority
+              width={350}
+              height={350}
             />
           </div>
           <div className="w-full flex-1">
