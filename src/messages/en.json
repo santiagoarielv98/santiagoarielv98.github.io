@@ -66,54 +66,54 @@
     "education": "Education",
     "workExperienceList": [
       {
-        "title": "Senior Full Stack Developer",
-        "organization": "Tech Innovators Inc.",
-        "period": "2021 - Present",
-        "description": "Led the development of scalable web applications using React, Node.js, and AWS.",
+        "title": "Front-end Developer",
+        "organization": "Waco Digital Hub",
+        "period": "October 2023 - April 2024",
+        "description": [
+          "Developed and improved user interfaces in the main web application.",
+          "Implemented a multilingual translation system with React i18n.",
+          "Worked with Google Firebase and Functions to add functionalities.",
+          "Optimized web features using Google Cloud."
+        ],
         "tags": [
-          "React",
-          "Node.js",
-          "AWS",
-          "Docker",
-          "GraphQL"
+          "react",
+          "javascript",
+          "typescript",
+          "firebase",
+          "gcp"
         ]
       },
       {
         "title": "Front-end Developer",
-        "organization": "Creative Web Solutions",
-        "period": "2018 - 2021",
-        "description": "Developed responsive and accessible user interfaces for clients from various sectors.",
+        "organization": "Waco Digital Hub",
+        "period": "April 2022 - August 2022",
+        "description": [
+          "Developed web pages and components with React.js.",
+          "Integrated backend services through RESTful API and GraphQL.",
+          "Managed application state using Redux and Context.",
+          "Implemented styles and components with MUI Core, Icons, and SASS."
+        ],
         "tags": [
-          "JavaScript",
-          "React",
-          "CSS",
-          "Webpack",
-          "Jest"
+          "react",
+          "redux",
+          "graphql",
+          "mui",
+          "sass"
         ]
       }
     ],
     "educationList": [
       {
-        "title": "Master's in Software Engineering",
+        "title": "Software Development Technician",
         "organization": "Technological University",
-        "period": "2017 - 2018",
-        "description": "Specialization in software architectures and agile methodologies.",
+        "period": "2023 - 2025",
+        "description": "I am pursuing this degree, where I have acquired a solid foundation in software development, learning and applying various technologies and development methodologies in real projects.",
         "tags": [
-          "Agile",
-          "Software Architecture",
-          "Cloud Computing"
-        ]
-      },
-      {
-        "title": "Bachelor's in Computer Science",
-        "organization": "State University",
-        "period": "2013 - 2017",
-        "description": "Fundamentals of programming, data structures, and algorithms.",
-        "tags": [
-          "Java",
-          "Data Structures",
-          "Algorithms",
-          "Database Systems"
+          "java",
+          "laravel",
+          "react",
+          "scrum",
+          "figma"
         ]
       }
     ]

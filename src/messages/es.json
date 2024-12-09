@@ -66,54 +66,54 @@
     "education": "Educación",
     "workExperienceList": [
       {
-        "title": "Desarrollador Full Stack Senior",
-        "organization": "Tech Innovators Inc.",
-        "period": "2021 - Presente",
-        "description": "Lideré el desarrollo de aplicaciones web escalables utilizando React, Node.js y AWS.",
+        "title": "Desarrollador Front-end",
+        "organization": "Waco Digital Hub",
+        "period": "Octubre 2023 - Abril 2024",
+        "description": [
+          "Desarrollé y mejoré interfaces de usuario en la aplicación web principal.",
+          "Implementé un sistema de traducción multilingüe con React i18n.",
+          "Trabajé con Google Firebase y Functions para agregar funcionalidades.",
+          "Optimicé características de la web utilizando Google Cloud."
+        ],
         "tags": [
-          "React",
-          "Node.js",
-          "AWS",
-          "Docker",
-          "GraphQL"
+          "react",
+          "javascript",
+          "typescript",
+          "firebase",
+          "gcp"
         ]
       },
       {
         "title": "Desarrollador Front-end",
-        "organization": "Creative Web Solutions",
-        "period": "2018 - 2021",
-        "description": "Desarrollé interfaces de usuario responsivas y accesibles para clientes de diversos sectores.",
+        "organization": "Waco Digital Hub",
+        "period": "Abril 2022 - Agosto 2022",
+        "description": [
+          "Desarrollé páginas web y componentes con React.js.",
+          "Integré servicios backend a través de API RESTful y GraphQL. ",
+          "Administré el estado de la aplicación usando Redux y Context.",
+          "Implementé estilos y componentes con MUI Core, Icons y SASS."
+        ],
         "tags": [
-          "JavaScript",
-          "React",
-          "CSS",
-          "Webpack",
-          "Jest"
+          "react",
+          "redux",
+          "graphql",
+          "mui",
+          "sass"
         ]
       }
     ],
     "educationList": [
       {
-        "title": "Máster en Ingeniería de Software",
+        "title": "Tecnicatura en desarrollo de software",
         "organization": "Universidad Tecnológica",
-        "period": "2017 - 2018",
-        "description": "Especialización en arquitecturas de software y metodologías ágiles.",
+        "period": "2023 - 2025",
+        "description": "Estoy cursando esta tecnicatura, donde he adquirido una sólida base en el desarrollo de software, aprendiendo y aplicando diversas tecnologías y metodologías de desarrollo en proyectos reales.",
         "tags": [
-          "Agile",
-          "Software Architecture",
-          "Cloud Computing"
-        ]
-      },
-      {
-        "title": "Grado en Ciencias de la Computación",
-        "organization": "Universidad Estatal",
-        "period": "2013 - 2017",
-        "description": "Fundamentos de programación, estructuras de datos y algoritmos.",
-        "tags": [
-          "Java",
-          "Data Structures",
-          "Algorithms",
-          "Database Systems"
+          "java",
+          "laravel",
+          "react",
+          "scrum",
+          "figma"
         ]
       }
     ]

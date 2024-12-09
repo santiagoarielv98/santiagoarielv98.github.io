@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { techs } from "@/globals/technologies";
 import { useTranslations } from "next-intl";
 
 export interface TimelineItem {
@@ -48,17 +49,38 @@ function TimelineSection({
               </Badge>
             </CardContent>
             <CardContent>
-              <p aria-label={a11y("ariaLabel.description")}>
-                {item.description}
-              </p>
+              {Array.isArray(item.description) ? (
+                <ul className="list-inside list-disc">
+                  {item.description.map((desc, descIndex) => (
+                    <li
+                      key={descIndex}
+                      aria-label={a11y("ariaLabel.description")}
+                    >
+                      {desc}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p aria-label={a11y("ariaLabel.description")}>
+                  {item.description}
+                </p>
+              )}
             </CardContent>
             <CardFooter>
               <div className="flex flex-wrap gap-2">
-                {item.tags.map((tag, tagIndex) => (
-                  <Badge key={tagIndex} variant="outline">
-                    {tag}
-                  </Badge>
-                ))}
+                {item.tags.map((tag) => {
+                  const currentTech = tag in techs ? techs[tag] : techs["code"];
+                  return (
+                    <Badge
+                      key={tag}
+                      variant="secondary"
+                      className="flex items-center gap-2"
+                    >
+                      <currentTech.icon className="h-3 w-3" />
+                      {currentTech.name}
+                    </Badge>
+                  );
+                })}
               </div>
             </CardFooter>
           </Card>
@@ -80,7 +102,7 @@ export default function Resume() {
         <h2 id="resume-title" className="mb-8 text-center text-3xl font-bold">
           {t("title")}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           <TimelineSection title={t("workExperience")} items={workExperience} />
           <TimelineSection title={t("education")} items={education} />
         </div>

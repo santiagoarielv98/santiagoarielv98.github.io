@@ -18,6 +18,7 @@ import {
   SiDocker,
   SiFirebase,
   SiGooglecloud,
+  SiGraphql,
   SiInertia,
   SiJavascript,
   SiLeaflet,
@@ -113,7 +114,7 @@ export const techs: Tech = {
     icon: SiPostgresql,
   },
   gcp: {
-    name: "GCP",
+    name: "Google Cloud",
     icon: SiGooglecloud,
   },
   github: {
@@ -171,5 +172,9 @@ export const techs: Tech = {
   code: {
     name: "code",
     icon: FaCode,
+  },
+  graphql: {
+    name: "GraphQL",
+    icon: SiGraphql,
   },
 };
