@@ -53,8 +53,10 @@ export const LoadParticles = () => {
       },
       particles: {
         color: {
-          // luz amarilla
-          value: "#f9f871",
+          // luz morado oscuro
+          // value: "#9c27b0",
+          // hazlo un poco más oscuro
+          value: "#7b1fa2",
         },
         move: {
           direction: MoveDirection.bottomRight,
