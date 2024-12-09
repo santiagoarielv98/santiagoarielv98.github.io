@@ -35,7 +35,7 @@
     "demo": "Demo",
     "projectsList": {
       "mimap": {
-        "title": "Mi Mapa",
+        "title": "MiMap",
         "description": "Mapa interactivo de Ituzaingó, que te permite ubicar locales, servicios e industrias."
       },
       "gestiontarea": {

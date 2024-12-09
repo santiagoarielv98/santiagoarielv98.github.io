@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { contactInfo } from "@/globals/contact";
+import { contactInfo } from "@/globals/info";
 import { useToast } from "@/hooks/use-toast";
 import { ExternalLink, Send } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -50,17 +50,18 @@ export default function Contact() {
               <ul className="space-y-4">
                 {contactInfo.map((item, index) => (
                   <li key={index}>
-                    <Button asChild variant="ghost">
+                    <Button asChild variant="ghost" className="flex">
                       <Link
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="space-x-2 w-full"
                         aria-label={a11y(item.label)}
                       >
                         <item.icon className="h-5 w-5" aria-hidden="true" />
                         <span>{a11y(item.label)}:</span>
-                        <span className="font-medium flex-1">{item.value}</span>
+                        <span className="mr-auto truncate font-medium">
+                          {item.value}
+                        </span>
                         <ExternalLink className="h-4 w-4" aria-hidden="true" />
                       </Link>
                     </Button>

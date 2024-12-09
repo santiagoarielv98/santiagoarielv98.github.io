@@ -3,6 +3,8 @@ import LInkedlnIcon from "@/components/icons/LInkedlnIcon";
 import WhatsappIcon from "@/components/icons/WhatsappIcon";
 import { Mail, Phone } from "lucide-react";
 
+// 02202 52-9223
+
 export const me = {
   name: "Santiago",
   middleName: "Ariel",
@@ -12,8 +14,8 @@ export const me = {
     sm: "/assets/img/profile-350x350.webp",
   },
   telephone: {
-    value: "+5491130529223",
-    label: "+54 9 11 3052 9223",
+    value: "tel:+542202529223",
+    label: "+54 220 252 9223",
   },
   email: {
     value: "mailto:santiagovillanuevaariel@gmail.com",
@@ -24,18 +26,18 @@ export const me = {
     label: "Ituzaingó, Buenos Aires, Argentina",
   },
   github: {
-    value: "santiagoarielv98",
-    label: "github.com/santiagoarielv98",
+    value: "github.com/santiagoarielv98",
+    label: "santiagoarielv98",
     href: "https://github.com/santiagoarielv98",
   },
   whatsapp: {
-    value: "+5491130529223",
-    label: "WhatsApp",
-    href: "https://wa.me/5491130529223",
+    value: "wa.me/542202529223",
+    label: "+54 220 252 9223",
+    href: "https://wa.me/542202529223",
   },
   linkedin: {
     value: "linkedin.com/in/santiagoarielv98",
-    label: "linkedin.com/in/santiagoarielv98",
+    label: "santiagoarielv98",
     href: "https://linkedin.com/in/santiagoarielv98",
   },
   website: {
@@ -54,31 +56,31 @@ export const contactInfo = [
   {
     icon: GitHubIcon,
     label: "ariaLabel.github",
-    value: me.github.value,
+    value: me.github.label,
     href: me.github.href,
   },
   {
     icon: LInkedlnIcon,
     label: "ariaLabel.linkedin",
-    value: me.linkedin.value,
+    value: me.linkedin.label,
     href: me.linkedin.href,
   },
   {
     icon: WhatsappIcon,
     label: "ariaLabel.whatsapp",
-    value: me.whatsapp.value,
+    value: me.whatsapp.label,
     href: me.whatsapp.href,
   },
   {
     icon: Phone,
     label: "ariaLabel.phone",
-    value: me.telephone.value,
-    href: `tel:${me.telephone.value}`,
+    value: me.telephone.label,
+    href: me.telephone.value,
   },
   {
     icon: Mail,
     label: "ariaLabel.email",
-    value: me.email.value,
+    value: me.email.label,
     href: me.email.value,
   },
 ];

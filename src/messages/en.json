@@ -7,10 +7,10 @@
   "about": {
     "title": "About Me",
     "description": "I am a web developer with experience in React, Next.js, and UI/UX design. I am passionate about creating fast, accessible, and easy-to-use web applications.",
-    "phone": "+1 234 567 890",
-    "email": "youremail@example.com",
-    "location": "Your City, Country",
-    "website": "www.yourwebsite.com"
+    "phone": "+54 2202 52 9223",
+    "email": "santiagovillanuevaariel@gmail.com",
+    "location": "Ituzaingó, Buenos Aires",
+    "website": "https://santiagoarielv98.vercel.app"
   },
   "skills": {
     "title": "My Skills",
@@ -35,15 +35,15 @@
     "demo": "Demo",
     "projectsList": {
       "mimap": {
-        "title": "My Map",
+        "title": "MiMap",
         "description": "Interactive map of Ituzaingó, allowing you to locate shops, services, and industries."
       },
       "gestiontarea": {
-        "title": "Task Management",
+        "title": "Gestión de Tareas",
         "description": "Web application for managing tasks."
       },
       "gestiontareaapi": {
-        "title": "Task Management API",
+        "title": "Gestión de Tareas API",
         "description": "API documentation for the task management application."
       },
       "svworld": {
@@ -51,7 +51,7 @@
         "description": "Web application for searching country information."
       },
       "cocheriaratti": {
-        "title": "Ratti Funeral Home",
+        "title": "Cochería Ratti",
         "description": "Redesign of the Ratti Funeral Home website."
       },
       "solucionesfrontendmentor": {
