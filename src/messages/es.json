@@ -12,7 +12,7 @@
     "location": "Ituzaingó, Buenos Aires",
     "website": "https://santiagoarielv98.vercel.app"
   },
-  "skills": { 
+  "skills": {
     "title": "Mis Habilidades",
     "categories": {
       "frontend": {
@@ -33,38 +33,32 @@
     "title": "Mis Proyectos",
     "repo": "Repo",
     "demo": "Demo",
-    "projectsList": [
-      {
-        "title": "Proyecto 1",
-        "description": "Una aplicación web construida con React y Next.js",
-        "technologies": [
-          "React",
-          "Next.js",
-          "Tailwind CSS",
-          "TypeScript"
-        ]
+    "projectsList": {
+      "mimap": {
+        "title": "Mi Mapa",
+        "description": "Mapa interactivo de Ituzaingó, que te permite ubicar locales, servicios e industrias."
       },
-      {
-        "title": "Proyecto 2",
-        "description": "Un sitio de comercio electrónico con integración de pagos",
-        "technologies": [
-          "Vue.js",
-          "Nuxt.js",
-          "Stripe",
-          "MongoDB"
-        ]
+      "gestiontarea": {
+        "title": "Gestión de Tareas",
+        "description": "Aplicación web para gestionar tareas."
       },
-      {
-        "title": "Proyecto 3",
-        "description": "Una aplicación móvil desarrollada con React Native",
-        "technologies": [
-          "React Native",
-          "Expo",
-          "Firebase",
-          "Redux"
-        ]
+      "gestiontareaapi": {
+        "title": "Gestión de Tareas API",
+        "description": "Documentación de la API de la aplicación de gestión de tareas."
+      },
+      "svworld": {
+        "title": "SV # World",
+        "description": "Aplicación web para buscar información de países."
+      },
+      "cocheriaratti": {
+        "title": "Cochería Ratti",
+        "description": "Rediseño de la página web de la cochería Ratti."
+      },
+      "solucionesfrontendmentor": {
+        "title": "Soluciones Frontend Mentor",
+        "description": "Soluciones a desafíos de Frontend Mentor."
       }
-    ]
+    }
   },
   "resume": {
     "title": "Mi Trayectoria",

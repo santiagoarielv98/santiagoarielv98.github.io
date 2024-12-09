@@ -33,38 +33,32 @@
     "title": "My Projects",
     "repo": "Repo",
     "demo": "Demo",
-    "projectsList": [
-      {
-        "title": "Project 1",
-        "description": "A web application built with React and Next.js",
-        "technologies": [
-          "React",
-          "Next.js",
-          "Tailwind CSS",
-          "TypeScript"
-        ]
+    "projectsList": {
+      "mimap": {
+        "title": "My Map",
+        "description": "Interactive map of Ituzaingó, allowing you to locate shops, services, and industries."
       },
-      {
-        "title": "Project 2",
-        "description": "An e-commerce site with payment integration",
-        "technologies": [
-          "Vue.js",
-          "Nuxt.js",
-          "Stripe",
-          "MongoDB"
-        ]
+      "gestiontarea": {
+        "title": "Task Management",
+        "description": "Web application for managing tasks."
       },
-      {
-        "title": "Project 3",
-        "description": "A mobile application developed with React Native",
-        "technologies": [
-          "React Native",
-          "Expo",
-          "Firebase",
-          "Redux"
-        ]
+      "gestiontareaapi": {
+        "title": "Task Management API",
+        "description": "API documentation for the task management application."
+      },
+      "svworld": {
+        "title": "SV # World",
+        "description": "Web application for searching country information."
+      },
+      "cocheriaratti": {
+        "title": "Ratti Funeral Home",
+        "description": "Redesign of the Ratti Funeral Home website."
+      },
+      "solucionesfrontendmentor": {
+        "title": "Frontend Mentor Solutions",
+        "description": "Solutions to Frontend Mentor challenges."
       }
-    ]
+    }
   },
   "resume": {
     "title": "My Resume",
