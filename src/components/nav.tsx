@@ -9,7 +9,6 @@ import {
   Home,
   Mail,
   Menu,
-  Phone,
   User,
 } from "lucide-react";
 import Image from "next/image";
@@ -36,9 +35,7 @@ import { useToast } from "@/hooks/use-toast";
 import type { Locale } from "@/i18n/config";
 import { cn } from "@/lib/utils";
 import { useLocale, useTranslations } from "next-intl";
-import LInkedlnIcon from "./icons/LInkedlnIcon";
-import WhatsappIcon from "./icons/WhatsappIcon";
-import GitHubIcon from "./icons/GitHubIcon";
+import { contactInfo, me } from "@/globals/info";
 
 const navItems = [
   { name: "home", href: "/", icon: Home },
@@ -47,13 +44,6 @@ const navItems = [
   { name: "resume", href: "/#resume", icon: FileText },
   { name: "projects", href: "/#projects", icon: Briefcase },
   { name: "contact", href: "/#contact", icon: Mail },
-];
-
-const socialItems = [
-  { icon: GitHubIcon, href: "https://github.com/tuusuario" },
-  { icon: LInkedlnIcon, href: "https://linkedin.com/in/tuusuario" },
-  { icon: WhatsappIcon, href: "https://wa.me/1234567890" },
-  { icon: Phone, href: "tel:+1234567890" },
 ];
 
 export function Nav() {
@@ -113,17 +103,17 @@ export function Nav() {
           </Link>
         ))}
         <Link
-          href="/path-to-your-cv.pdf"
+          href={me.cv.href}
           aria-label={t("downloadCV")}
           className="flex h-9 items-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-          download
-          onClick={(e) => {
-            e.preventDefault();
+          download={me.cv.download}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => {
             toast({
               title: t("downloadingCV.title"),
               description: t("downloadingCV.description"),
             });
-            // Aquí iría la lógica real de descarga
           }}
         >
           <Download className="mr-2 h-4 w-4" />
@@ -137,7 +127,7 @@ export function Nav() {
   return (
     <>
       <Sidebar>
-        <SidebarHeader className="border-b py-4 flex flex-col items-center space-y-4">
+        <SidebarHeader className="flex flex-col items-center space-y-4 border-b py-4">
           <Image
             src="/assets/img/profile-350x350.webp"
             width={96}
@@ -154,9 +144,9 @@ export function Nav() {
           <NavContent />
         </SidebarContent>
         <Separator />
-        <SidebarFooter className="px-6 py-4">
+        <SidebarFooter className="py-4">
           <div className="flex justify-center space-x-2">
-            {socialItems.map((item, index) => (
+            {contactInfo.map((item, index) => (
               <Button key={index} variant="ghost" size="icon" asChild>
                 <Link
                   href={item.href}

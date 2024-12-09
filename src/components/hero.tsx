@@ -2,12 +2,14 @@
 
 import { Button } from "@/components/ui/button";
 import { me } from "@/globals/info";
+import { toast } from "@/hooks/use-toast";
 import { Download } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 export default function Hero() {
   const t = useTranslations("hero");
   const a11y = useTranslations("accessibility");
+  const nav = useTranslations("nav");
 
   return (
     <section
@@ -25,6 +27,12 @@ export default function Hero() {
             href={me.cv.href}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+              toast({
+                title: nav("downloadingCV.title"),
+                description: nav("downloadingCV.description"),
+              });
+            }}
           >
             <Download className="h-5 w-5" aria-hidden="true" />
             {t("button")}
