@@ -7,24 +7,17 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Code, Github } from "lucide-react";
+import { Code, ExternalLink } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "./ui/badge";
-
-interface ProjectItem {
-  title: string;
-  description: string;
-  technologies: string[];
-  demo?: string;
-  repo: string;
-}
+import { projects } from "@/globals/projects";
+import GitHubIcon from "./icons/GitHubIcon";
 
 export default function Projects() {
   const t = useTranslations("projects");
   const a11y = useTranslations("accessibility");
-  const projects = t.raw("projectsList") as ProjectItem[];
 
   return (
     <section
@@ -41,8 +34,7 @@ export default function Projects() {
             <Card key={index} className="flex flex-col overflow-hidden">
               <div className="relative h-48 w-full">
                 <Image
-                  src="/next.svg"
-                  // alt={t(`projectsList.${item}.title`)}
+                  src={item.image}
                   alt={item.title}
                   layout="fill"
                   objectFit="cover"
@@ -56,7 +48,7 @@ export default function Projects() {
               </CardHeader>
               <CardContent className="flex-grow">
                 <div className="mb-4 flex flex-wrap gap-2">
-                  {item.technologies.map((tech, techIndex) => (
+                  {[].map((tech, techIndex) => (
                     <Badge
                       key={techIndex}
                       variant="secondary"
@@ -69,25 +61,32 @@ export default function Projects() {
                 </div>
               </CardContent>
               <CardFooter className="flex justify-between">
-                <Button variant="outline" size="sm" asChild>
-                  <Link
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={a11y("ariaLabel.github")}
-                  >
-                    <Github className="mr-2 h-4 w-4" />
-                    {t("repo")}
-                  </Link>
-                </Button>
-                {/* {project.demo && (
+                {item.link && (
                   <Button variant="outline" size="sm" asChild>
-                    <Link href={project.demo} target="_blank" rel="noopener noreferrer" aria-label={a11y("ariaLabel.demo")}>
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      {t('demo')}
+                    <Link
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={a11y("ariaLabel.github")}
+                    >
+                      <GitHubIcon className="mr-2 h-4 w-4" />
+                      {t("repo")}
                     </Link>
                   </Button>
-                )} */}
+                )}
+                {item.demo && (
+                  <Button variant="outline" size="sm" asChild>
+                    <Link
+                      href={item.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={a11y("ariaLabel.demo")}
+                    >
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      {t("demo")}
+                    </Link>
+                  </Button>
+                )}
               </CardFooter>
             </Card>
           ))}

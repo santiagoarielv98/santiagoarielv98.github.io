@@ -1,8 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import {
   Card,
   CardContent,
@@ -10,16 +8,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  Github,
-  Linkedin,
-  Phone,
-  Mail,
-  MessageCircle,
-  Send,
-  SquareArrowOutUpRight,
-} from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { contactInfo } from "@/globals/contact";
 import { useToast } from "@/hooks/use-toast";
+import { ExternalLink, Send } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
@@ -28,46 +21,13 @@ export default function Contact() {
   const t = useTranslations("contact");
   const a11y = useTranslations("accessibility");
 
-  const contactInfo = [
-    {
-      icon: Github,
-      label: a11y("ariaLabel.github"),
-      value: "github.com/tuusuario",
-      href: "https://github.com/tuusuario",
-    },
-    {
-      icon: Linkedin,
-      label: a11y("ariaLabel.linkedin"),
-      value: "linkedin.com/in/tuusuario",
-      href: "https://linkedin.com/in/tuusuario",
-    },
-    {
-      icon: MessageCircle,
-      label: a11y("ariaLabel.whatsapp"),
-      value: "+1234567890",
-      href: "https://wa.me/1234567890",
-    },
-    {
-      icon: Phone,
-      label: a11y("ariaLabel.phone"),
-      value: "+1234567890",
-      href: "tel:+1234567890",
-    },
-    {
-      icon: Mail,
-      label: a11y("ariaLabel.email"),
-      value: "tu@email.com",
-      href: "mailto:tu@email.com",
-    },
-  ];
-
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Aquí iría la lógica real de envío del formulario
     toast({
       title: t("formSuccessTitle"),
       description: t("formSuccessDescription"),
     });
+    event.currentTarget.reset();
   };
 
   return (
@@ -96,15 +56,12 @@ export default function Contact() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="space-x-2 w-full"
-                        aria-label={item.label}
+                        aria-label={a11y(item.label)}
                       >
                         <item.icon className="h-5 w-5" aria-hidden="true" />
-                        <span>{item.label}:</span>
+                        <span>{a11y(item.label)}:</span>
                         <span className="font-medium flex-1">{item.value}</span>
-                        <SquareArrowOutUpRight
-                          className="h-4 w-4"
-                          aria-hidden="true"
-                        />
+                        <ExternalLink className="h-4 w-4" aria-hidden="true" />
                       </Link>
                     </Button>
                   </li>

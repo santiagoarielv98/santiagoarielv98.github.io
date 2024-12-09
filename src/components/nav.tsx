@@ -6,12 +6,9 @@ import {
   Code,
   Download,
   FileText,
-  Github,
   Home,
-  Linkedin,
   Mail,
   Menu,
-  MessageCircle,
   Phone,
   User,
 } from "lucide-react";
@@ -39,6 +36,9 @@ import { useToast } from "@/hooks/use-toast";
 import type { Locale } from "@/i18n/config";
 import { cn } from "@/lib/utils";
 import { useLocale, useTranslations } from "next-intl";
+import LInkedlnIcon from "./icons/LInkedlnIcon";
+import WhatsappIcon from "./icons/WhatsappIcon";
+import GitHubIcon from "./icons/GitHubIcon";
 
 const navItems = [
   { name: "home", href: "/", icon: Home },
@@ -50,9 +50,9 @@ const navItems = [
 ];
 
 const socialItems = [
-  { icon: Github, href: "https://github.com/tuusuario" },
-  { icon: Linkedin, href: "https://linkedin.com/in/tuusuario" },
-  { icon: MessageCircle, href: "https://wa.me/1234567890" },
+  { icon: GitHubIcon, href: "https://github.com/tuusuario" },
+  { icon: LInkedlnIcon, href: "https://linkedin.com/in/tuusuario" },
+  { icon: WhatsappIcon, href: "https://wa.me/1234567890" },
   { icon: Phone, href: "tel:+1234567890" },
 ];
 

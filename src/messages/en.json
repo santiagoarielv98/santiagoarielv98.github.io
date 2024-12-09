@@ -184,7 +184,8 @@
       "about": "About Me",
       "projects": "Projects",
       "resume": "Resume",
-      "contact": "Contact"
+      "contact": "Contact",
+      "demo": "Demo"
     }
   },
   "sidebar": {
