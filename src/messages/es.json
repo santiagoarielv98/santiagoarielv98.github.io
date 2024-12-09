@@ -7,12 +7,12 @@
   "about": {
     "title": "Sobre mí",
     "description": "Soy un desarrollador web con experiencia en React, Next.js y diseño UI/UX. Me apasiona crear aplicaciones web rápidas, accesibles y fáciles de usar.",
-    "phone": "+1 234 567 890",
-    "email": "tucorreo@ejemplo.com",
-    "location": "Tu Ciudad, País",
-    "website": "www.tuwebsite.com"
+    "phone": "+54 2202 52 9223",
+    "email": "santiagovillanuevaariel@gmail.com",
+    "location": "Ituzaingó, Buenos Aires",
+    "website": "https://santiagoarielv98.vercel.app"
   },
-  "skills": {
+  "skills": { 
     "title": "Mis Habilidades",
     "categories": {
       "frontend": {

@@ -31,7 +31,7 @@ export default function About() {
             <p className="mb-6 text-center text-lg md:text-left">
               {t("description")}
             </p>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
               <div className="flex items-center space-x-2">
                 <Phone
                   className="h-5 w-5 text-primary"
