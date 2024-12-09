@@ -34,7 +34,7 @@ function TimelineSection({
       </h3>
       <div className="space-y-4">
         {items.map((item, index) => (
-          <Card key={index} className="relative">
+          <Card key={index} className="relative z-10">
             <CardHeader className="pb-2">
               <CardTitle aria-label={a11y("ariaLabel.jobTitle")}>
                 {item.title}

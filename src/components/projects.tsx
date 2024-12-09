@@ -29,7 +29,7 @@ export default function Projects() {
         const title = t(`projectsList.${name}.title`);
         const description = t(`projectsList.${name}.description`);
         return (
-          <Card key={name} className="flex flex-col overflow-hidden">
+          <Card key={name} className="z-10 flex flex-col overflow-hidden">
             <div className="relative h-48 w-full">
               <Image
                 src={item.image}

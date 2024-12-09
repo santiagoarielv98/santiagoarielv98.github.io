@@ -33,7 +33,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-muted px-6 py-16"
+      className="relative px-6 py-16"
       aria-labelledby="contact-title"
     >
       <div className="mx-auto max-w-6xl">
@@ -41,7 +41,7 @@ export default function Contact() {
           {t("title")}
         </h2>
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
-          <Card className="lg:col-span-5">
+          <Card className="z-10 lg:col-span-5">
             <CardHeader>
               <CardTitle>{t("contactInfoTitle")}</CardTitle>
               <CardDescription>{t("contactInfoDescription")}</CardDescription>
@@ -70,7 +70,7 @@ export default function Contact() {
               </ul>
             </CardContent>
           </Card>
-          <Card className="lg:col-span-7">
+          <Card className="z-10 lg:col-span-7">
             <CardHeader>
               <CardTitle>{t("formTitle")}</CardTitle>
               <CardDescription>{t("formDescription")}</CardDescription>

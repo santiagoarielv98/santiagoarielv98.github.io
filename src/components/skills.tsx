@@ -16,7 +16,7 @@ export default function Skills() {
         const description = t(`categories.${key}.description`);
 
         return (
-          <Card key={key}>
+          <Card key={key} className="relative z-10">
             <CardHeader>
               <div className="flex items-center space-x-2">
                 <item.icon

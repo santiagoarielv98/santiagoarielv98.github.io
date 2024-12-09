@@ -7,15 +7,12 @@ export default function About() {
   const t = useTranslations("about");
   const a11y = useTranslations("accessibility");
   return (
-    <section
-      id="about"
-      className="bg-muted px-6 py-16"
-      aria-labelledby="about-title"
-    >
+    <section id="about" className="px-6 py-16" aria-labelledby="about-title">
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col items-center gap-8 md:flex-row md:items-start">
           <div className="relative mx-auto h-48 w-48 overflow-hidden rounded-full md:mx-0">
             <Image
+              className="relative z-10"
               src={me.image.sm}
               alt="Mi Foto de Perfil"
               priority
