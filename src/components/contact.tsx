@@ -17,6 +17,7 @@ import {
   Mail,
   MessageCircle,
   Send,
+  SquareArrowOutUpRight,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useTranslations } from "next-intl";
@@ -94,12 +95,16 @@ export default function Contact() {
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="space-x-2 text-sm"
+                        className="space-x-2 w-full"
                         aria-label={item.label}
                       >
                         <item.icon className="h-5 w-5" aria-hidden="true" />
                         <span>{item.label}:</span>
-                        <span className="font-medium">{item.value}</span>
+                        <span className="font-medium flex-1">{item.value}</span>
+                        <SquareArrowOutUpRight
+                          className="h-4 w-4"
+                          aria-hidden="true"
+                        />
                       </Link>
                     </Button>
                   </li>

@@ -1,4 +1,5 @@
 {
+    "workbench.colorTheme": "Tomorrow Night Blue",
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "always"
     }

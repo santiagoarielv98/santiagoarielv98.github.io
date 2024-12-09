@@ -79,8 +79,10 @@ export default function Resume() {
         <h2 id="resume-title" className="mb-8 text-center text-3xl font-bold">
           {t("title")}
         </h2>
-        <TimelineSection title={t("workExperience")} items={workExperience} />
-        <TimelineSection title={t("education")} items={education} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <TimelineSection title={t("workExperience")} items={workExperience} />
+          <TimelineSection title={t("education")} items={education} />
+        </div>
       </div>
     </section>
   );

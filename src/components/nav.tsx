@@ -137,7 +137,15 @@ export function Nav() {
   return (
     <>
       <Sidebar>
-        <SidebarHeader className="border-b px-6 py-4">
+        <SidebarHeader className="border-b py-4 flex flex-col items-center space-y-4">
+          <Image
+            src="/assets/img/profile-350x350.webp"
+            width={96}
+            height={96}
+            alt="Mi Foto"
+            className="h-24 w-24 rounded-full"
+            priority
+          />
           <Link href="/" className="text-2xl font-bold">
             {t("portfolio")}
           </Link>
