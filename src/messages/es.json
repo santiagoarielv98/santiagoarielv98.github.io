@@ -1,12 +1,12 @@
 {
   "hero": {
     "welcome": "Bienvenido a mi Portfolio",
-    "description": "Soy un desarrollador web apasionado por crear experiencias digitales increíbles.",
-    "button": "Ver mis proyectos"
+    "description": "Desarrollador Full Stack Especializado en crear aplicaciones web de alto rendimiento con tecnologías innovadoras. 🚀",
+    "button": "Descargar CV"
   },
   "about": {
     "title": "Sobre mí",
-    "description": "Soy un desarrollador web con experiencia en React, Next.js y diseño UI/UX. Me apasiona crear aplicaciones web rápidas, accesibles y fáciles de usar.",
+    "description": "Desarrollador con experiencia en React, Angular, Java, Spring Boot, TypeScript y NestJS. Especializado en la creación de interfaces de usuario intuitivas y funcionales, así como en la implementación de sistemas backend robustos.",
     "phone": "+54 2202 52 9223",
     "email": "santiagovillanuevaariel@gmail.com",
     "location": "Ituzaingó, Buenos Aires",

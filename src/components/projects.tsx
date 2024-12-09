@@ -53,7 +53,7 @@ export default function Projects() {
                     <Badge
                       key={techIndex}
                       variant="secondary"
-                      className="flex items-center gap-1"
+                      className="flex items-center gap-2"
                     >
                       <currentTech.icon className="h-3 w-3" />
                       {currentTech.name}

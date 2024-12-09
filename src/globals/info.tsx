@@ -1,8 +1,7 @@
 import GitHubIcon from "@/components/icons/GitHubIcon";
 import LInkedlnIcon from "@/components/icons/LInkedlnIcon";
 import WhatsappIcon from "@/components/icons/WhatsappIcon";
-import { Mail, Phone } from "lucide-react";
-
+import { Mail, Phone, Code, Server, Cloud } from "lucide-react";
 // 02202 52-9223
 
 export const me = {
@@ -120,7 +119,7 @@ export const projectsList: Record<string, Project> = {
     repo: "https://github.com/santiagoarielv98/sv-cocheria-ratti",
     image: "/assets/img/projects/sv-cocheria-ratti.webp",
     demo: "https://santiagoarielv98.github.io/sv-cocheria-ratti/",
-    techs: ["html", "bootstrap", "bootstrap"],
+    techs: ["html", "bootstrap"],
   },
   solucionesfrontendmentor: {
     repo: "https://github.com/santiagoarielv98/sv-frontmentor-solutions",
@@ -132,12 +131,46 @@ export const projectsList: Record<string, Project> = {
 
 export const skillsList = {
   frontend: {
-    skills: ["react", "nextjs", "tailwindcss", "typescript"],
+    icon: Code,
+    skills: [
+      "typescript",
+      "react",
+      "redux",
+      "mui",
+      "sass",
+      "nextjs",
+      "angular",
+      "figma",
+      "html",
+      "tailwindcss",
+      "bootstrap",
+      "inertia",
+      "leaflet",
+      "tanstack",
+      "javascript",
+    ],
   },
   backend: {
-    skills: ["nodejs", "express", "mongodb", "postgresql"],
+    icon: Server,
+    skills: [
+      "java",
+      "spring",
+      "nestjs",
+      "firebase",
+      "aws",
+      "docker",
+      "mongodb",
+      "mysql",
+      "postgresql",
+      "gcp",
+      "laravel",
+      "supabase",
+      "swagger",
+      "axios",
+    ],
   },
   cloud: {
-    skills: ["aws", "docker", "kubernetes", "vercel"],
+    icon: Cloud,
+    skills: ["aws", "gcp", "firebase", "supabase", "docker"],
   },
 };
