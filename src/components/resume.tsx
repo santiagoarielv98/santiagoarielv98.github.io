@@ -1,5 +1,12 @@
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { useTranslations } from "next-intl";
 
 export interface TimelineItem {
@@ -28,30 +35,24 @@ function TimelineSection({
         {items.map((item, index) => (
           <Card key={index} className="relative">
             <CardHeader className="pb-2">
-              <div className="flex items-start justify-between">
-                <div>
-                  <CardTitle aria-label={a11y("ariaLabel.jobTitle")}>
-                    {item.title}
-                  </CardTitle>
-                  <p
-                    className="text-sm text-muted-foreground"
-                    aria-label={a11y("ariaLabel.organization")}
-                  >
-                    {item.organization}
-                  </p>
-                </div>
-                <Badge
-                  variant="secondary"
-                  aria-label={a11y("ariaLabel.period")}
-                >
-                  {item.period}
-                </Badge>
-              </div>
+              <CardTitle aria-label={a11y("ariaLabel.jobTitle")}>
+                {item.title}
+              </CardTitle>
+              <CardDescription aria-label={a11y("ariaLabel.organization")}>
+                {item.organization}
+              </CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="mb-2" aria-label={a11y("ariaLabel.description")}>
+              <Badge variant="secondary" aria-label={a11y("ariaLabel.period")}>
+                {item.period}
+              </Badge>
+            </CardContent>
+            <CardContent>
+              <p aria-label={a11y("ariaLabel.description")}>
                 {item.description}
               </p>
+            </CardContent>
+            <CardFooter>
               <div className="flex flex-wrap gap-2">
                 {item.tags.map((tag, tagIndex) => (
                   <Badge key={tagIndex} variant="outline">
@@ -59,7 +60,7 @@ function TimelineSection({
                   </Badge>
                 ))}
               </div>
-            </CardContent>
+            </CardFooter>
           </Card>
         ))}
       </div>
