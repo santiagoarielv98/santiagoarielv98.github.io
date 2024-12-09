@@ -21,7 +21,7 @@ export default function Hero() {
           {t("welcome")}
         </h1>
         <p className="mb-8 text-xl">{t("description")}</p>
-        <Button variant="secondary" aria-label={a11y("skipToContent")} asChild>
+        <Button variant="secondary" aria-label={a11y("downloadCv")} asChild>
           <a
             download={me.cv.download}
             href={me.cv.href}

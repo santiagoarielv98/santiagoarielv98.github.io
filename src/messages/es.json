@@ -155,7 +155,7 @@
     "system": "Sistema"
   },
   "accessibility": {
-    "skipToContent": "Saltar al contenido",
+    "downloadCv": "Descargar CV",
     "ariaLabel": {
       "phone": "Teléfono",
       "email": "Email",

@@ -155,7 +155,7 @@
     "system": "System"
   },
   "accessibility": {
-    "skipToContent": "Skip to content",
+    "downloadCv": "Download CV",
     "ariaLabel": {
       "phone": "Phone",
       "email": "Email",
