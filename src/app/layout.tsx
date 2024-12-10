@@ -14,6 +14,10 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/logo.svg",
+    apple: "/logo.svg",
+  },
   title: "SV ~ Portfolio",
   description:
     "Bienvenido a mi portfolio, aquí podrás encontrar información sobre mi experiencia, proyectos y habilidades.",
