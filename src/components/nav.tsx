@@ -64,12 +64,15 @@ export function Nav() {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map((item) => item.href.replace("/#", ""));
+      const sections = navItems.map((item) => item.name);
       const currentSection = sections.find((section) => {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
+          return (
+            rect.top <= window.innerHeight / 2.5 &&
+            rect.bottom >= window.innerHeight / 2.5
+          );
         }
         return false;
       });
@@ -79,6 +82,7 @@ export function Nav() {
         setActiveSection("/");
       }
     };
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);

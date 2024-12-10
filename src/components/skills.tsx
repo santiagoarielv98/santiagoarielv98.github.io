@@ -59,7 +59,7 @@ export default function Skills() {
         <h2 id="skills-title" className="mb-8 text-center text-3xl font-bold">
           {t("title")}
         </h2>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3">
           {skills}
         </div>
       </div>

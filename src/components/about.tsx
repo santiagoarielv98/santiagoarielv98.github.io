@@ -9,10 +9,10 @@ export default function About() {
   return (
     <section id="about" className="px-6 py-16" aria-labelledby="about-title">
       <div className="mx-auto max-w-6xl">
-        <div className="flex flex-col items-center gap-8 md:flex-row md:items-start">
-          <div className="relative mx-auto h-48 w-48 overflow-hidden rounded-full md:mx-0">
+        <div className="grid gap-8 lg:grid-cols-12">
+          <div className="relative mx-auto h-48 w-48 lg:col-span-5 lg:h-72 lg:w-72">
             <Image
-              className="relative z-10"
+              className="relative z-10 h-auto w-full rounded-full"
               src={me.image.sm}
               alt="Mi Foto de Perfil"
               priority
@@ -20,17 +20,17 @@ export default function About() {
               height={350}
             />
           </div>
-          <div className="w-full flex-1">
+          <div className="flex w-full flex-col justify-center lg:col-span-7">
             <h2
               id="about-title"
-              className="mb-4 text-center text-3xl font-bold md:text-left"
+              className="mb-4 text-center text-3xl font-bold lg:text-left"
             >
               {t("title")}
             </h2>
             <p className="mb-6 text-center text-lg md:text-left">
               {t("description")}
             </p>
-            <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+            <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
               <div className="flex items-center space-x-2">
                 <Phone
                   className="h-5 w-5 text-primary"
