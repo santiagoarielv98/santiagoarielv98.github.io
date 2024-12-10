@@ -42,15 +42,13 @@ export default function Projects() {
         });
         return (
           <Card key={name} className="z-10 flex flex-col overflow-hidden">
-            <div className="relative h-48 w-full">
-              <Image
-                src={item.image}
-                alt={t(`projectsList.${name}.title`)}
-                width={360}
-                height={180}
-                className="h-auto w-full rounded-t-lg"
-              />
-            </div>
+            <Image
+              src={item.image}
+              alt={t(`projectsList.${name}.title`)}
+              width={360}
+              height={180}
+              className="h-48 w-full rounded-t-lg border-b object-cover"
+            />
             <CardHeader>
               <CardTitle>{title}</CardTitle>
               <CardDescription>{description}</CardDescription>
