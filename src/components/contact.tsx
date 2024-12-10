@@ -8,27 +8,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { contactInfo } from "@/globals/info";
-import { useToast } from "@/hooks/use-toast";
-import { ExternalLink, Send } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { ContactForm } from "./contact-form";
 
 export default function Contact() {
-  const { toast } = useToast();
   const t = useTranslations("contact");
   const a11y = useTranslations("accessibility");
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    toast({
-      title: t("formSuccessTitle"),
-      description: t("formSuccessDescription"),
-    });
-    event.currentTarget.reset();
-  };
 
   return (
     <section
@@ -76,52 +64,7 @@ export default function Contact() {
               <CardDescription>{t("formDescription")}</CardDescription>
             </CardHeader>
             <CardContent>
-              <form
-                onSubmit={handleSubmit}
-                className="space-y-4"
-                aria-labelledby="contact-form-title"
-              >
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium">
-                    {t("formLabels.name")}
-                  </label>
-                  <Input
-                    id="name"
-                    placeholder={t("formLabels.name")}
-                    required
-                    aria-required="true"
-                    autoComplete="name"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium">
-                    {t("formLabels.email")}
-                  </label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder={t("formLabels.email")}
-                    required
-                    aria-required="true"
-                    autoComplete="email"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">
-                    {t("formLabels.message")}
-                  </label>
-                  <Textarea
-                    id="message"
-                    placeholder={t("formLabels.message")}
-                    required
-                    aria-required="true"
-                  />
-                </div>
-                <Button type="submit" className="w-full">
-                  <Send className="h-5 w-5" aria-hidden="true" />
-                  {t("formSubmit")}
-                </Button>
-              </form>
+              <ContactForm />
             </CardContent>
           </Card>
         </div>

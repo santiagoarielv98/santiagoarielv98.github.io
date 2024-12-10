@@ -127,11 +127,20 @@
     "formLabels": {
       "name": "Nombre",
       "email": "Email",
-      "message": "Mensaje"
+      "message": "Mensaje",
+      "subject": "Asunto (opcional)"
     },
     "formSubmit": "Enviar mensaje",
     "formSuccessTitle": "Formulario enviado",
-    "formSuccessDescription": "Gracias por tu mensaje. Me pondré en contacto contigo pronto."
+    "formSuccessDescription": "Gracias por tu mensaje. Me pondré en contacto contigo pronto.",
+    "formErrorTitle": "Error al enviar el formulario",
+    "formErrorDescription": "Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.",
+    "formSubmitting": "Enviando...",
+    "formValidation": {
+      "nameMin": "El nombre debe tener al menos 2 caracteres.",
+      "emailValid": "Por favor, introduce un email válido.",
+      "messageMin": "El mensaje debe tener al menos 5 caracteres."
+    }
   },
   "nav": {
     "portfolio": "Mi Portfolio",

@@ -127,11 +127,20 @@
     "formLabels": {
       "name": "Name",
       "email": "Email",
-      "message": "Message"
+      "message": "Message",
+      "subject": "Subject (optional)"
     },
     "formSubmit": "Send message",
     "formSuccessTitle": "Form submitted",
-    "formSuccessDescription": "Thank you for your message. I will get back to you soon."
+    "formSuccessDescription": "Thank you for your message. I will get back to you soon.",
+    "formErrorTitle": "Error submitting form",
+    "formErrorDescription": "There was a problem submitting your message. Please try again later.",
+    "formSubmitting": "Submitting...",
+    "formValidation": {
+      "nameMin": "Name must be at least 2 characters long.",
+      "emailValid": "Please enter a valid email address.",
+      "messageMin": "Message must be at least 5 characters long."
+    }
   },
   "nav": {
     "portfolio": "My Portfolio",
