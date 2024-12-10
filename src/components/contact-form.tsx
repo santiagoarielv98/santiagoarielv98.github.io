@@ -114,7 +114,7 @@ export function ContactForm() {
           control={form.control}
           name="subject"
           render={({ field }) => (
-            <FormItem className="col-span-2">
+            <FormItem className="md:col-span-2">
               <FormLabel>{t("formLabels.subject")}</FormLabel>
               <FormControl>
                 <Input placeholder={t("formLabels.subject")} {...field} />
@@ -130,7 +130,7 @@ export function ContactForm() {
           control={form.control}
           name="message"
           render={({ field }) => (
-            <FormItem className="col-span-2">
+            <FormItem className="md:col-span-2">
               <FormLabel>{t("formLabels.message")}</FormLabel>
               <FormControl>
                 <Textarea
@@ -146,7 +146,7 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" disabled={isSubmitting} className="col-span-2">
+        <Button type="submit" disabled={isSubmitting} className="md:col-span-2">
           {isSubmitting ? t("formSubmitting") : t("formSubmit")}
         </Button>
       </form>
