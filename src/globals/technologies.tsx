@@ -10,6 +10,7 @@ import {
   FaLaravel,
   FaReact,
   FaSass,
+  FaUsers,
 } from "react-icons/fa";
 import type { IconType } from "react-icons/lib";
 import {
@@ -176,5 +177,9 @@ export const techs: Tech = {
   graphql: {
     name: "GraphQL",
     icon: SiGraphql,
+  },
+  scrum: {
+    name: "Scrum",
+    icon: FaUsers,
   },
 };

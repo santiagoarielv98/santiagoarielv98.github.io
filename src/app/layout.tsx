@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
+import { Footer } from "@/components/footer"; // Import the Footer component
 
 import "./globals.css";
 
@@ -67,7 +68,10 @@ export default async function RootLayout({
               <SidebarProvider>
                 <div className="flex min-h-screen w-full">
                   <Nav />
-                  <main className="flex-1">{children}</main>
+                  <div className="flex flex-1 flex-col">
+                    <main className="flex-1">{children}</main>
+                    <Footer />
+                  </div>
                 </div>
               </SidebarProvider>
             </LanguageProvider>

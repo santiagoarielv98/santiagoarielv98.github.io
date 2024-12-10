@@ -52,7 +52,7 @@
       },
       "cocheriaratti": {
         "title": "Cochería Ratti",
-        "description": "Redesign of the Ratti Funeral Home website."
+        "description": "Redesign of the <link>Ratti Funeral Home website.</link>"
       },
       "solucionesfrontendmentor": {
         "title": "Frontend Mentor Solutions",
@@ -179,11 +179,15 @@
       "projects": "Projects",
       "resume": "Resume",
       "contact": "Contact",
-      "demo": "Demo"
+      "demo": "Demo",
+      "footer": "Footer"
     }
   },
   "sidebar": {
     "sheetTitle": "Navigation Menu",
     "sheetDescription": "Navigate through the sections of my Portfolio"
+  },
+  "footer": {
+    "copyright": "All rights reserved."
   }
 }

@@ -27,7 +27,19 @@ export default function Projects() {
     () =>
       Object.entries(projectsList).map(([name, item]) => {
         const title = t(`projectsList.${name}.title`);
-        const description = t(`projectsList.${name}.description`);
+        const description = t.rich(`projectsList.${name}.description`, {
+          link: (chuncks) => (
+            <Link
+              href={item.meta!.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={a11y("ariaLabel.demo")}
+              className="text-blue-500 hover:underline"
+            >
+              {chuncks}
+            </Link>
+          ),
+        });
         return (
           <Card key={name} className="z-10 flex flex-col overflow-hidden">
             <div className="relative h-48 w-full">

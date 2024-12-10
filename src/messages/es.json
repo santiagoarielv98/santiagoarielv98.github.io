@@ -52,7 +52,7 @@
       },
       "cocheriaratti": {
         "title": "Cochería Ratti",
-        "description": "Rediseño de la página web de la cochería Ratti."
+        "description": "Rediseño de la página web de la <link>cochería Ratti.</link>"
       },
       "solucionesfrontendmentor": {
         "title": "Soluciones Frontend Mentor",
@@ -179,11 +179,15 @@
       "projects": "Proyectos",
       "resume": "Trayectoria",
       "contact": "Contacto",
-      "demo": "Demo"
+      "demo": "Demo",
+      "footer": "Pie de página"
     }
   },
   "sidebar": {
     "sheetTitle": "Menu de Navegación",
     "sheetDescription": "Navega a través de las secciones de mi Portfolio"
+  },
+  "footer": {
+    "copyright": "Todos los derechos reservados."
   }
 }

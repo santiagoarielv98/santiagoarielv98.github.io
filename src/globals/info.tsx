@@ -94,6 +94,7 @@ export interface Project {
   demo?: string;
   image: string;
   techs: string[];
+  meta?: Record<string, string>;
 }
 
 export const projectsList: Record<string, Project> = {
@@ -125,6 +126,9 @@ export const projectsList: Record<string, Project> = {
     image: "/assets/img/projects/sv-cocheria-ratti.webp",
     demo: "https://santiagoarielv98.github.io/sv-cocheria-ratti/",
     techs: ["html", "bootstrap"],
+    meta: {
+      href: "https://cocheriaratti.com.ar/",
+    },
   },
   solucionesfrontendmentor: {
     repo: "https://github.com/santiagoarielv98/sv-frontmentor-solutions",
