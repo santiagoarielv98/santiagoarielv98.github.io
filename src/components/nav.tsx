@@ -38,7 +38,7 @@ import { cn } from "@/lib/utils";
 import { useLocale, useTranslations } from "next-intl";
 
 const navItems = [
-  { name: "home", href: "#hero", icon: Home },
+  { name: "home", href: "/#hero", icon: Home },
   { name: "about", href: "/#about", icon: User },
   { name: "skills", href: "/#skills", icon: Code },
   { name: "resume", href: "/#resume", icon: FileText },

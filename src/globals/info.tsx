@@ -1,7 +1,5 @@
-import GitHubIcon from "@/components/icons/GitHubIcon";
-import LInkedlnIcon from "@/components/icons/LInkedlnIcon";
-import WhatsappIcon from "@/components/icons/WhatsappIcon";
-import { Mail, Phone, Code, Server, Cloud } from "lucide-react";
+import { Cloud, Code, Mail, Phone, Server } from "lucide-react";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 // 02202 52-9223
 
 export const me = {
@@ -58,19 +56,19 @@ export const me = {
 
 export const contactInfo = [
   {
-    icon: GitHubIcon,
+    icon: FaGithub,
     label: "ariaLabel.github",
     value: me.github.label,
     href: me.github.href,
   },
   {
-    icon: LInkedlnIcon,
+    icon: FaLinkedin,
     label: "ariaLabel.linkedin",
     value: me.linkedin.label,
     href: me.linkedin.href,
   },
   {
-    icon: WhatsappIcon,
+    icon: FaWhatsapp,
     label: "ariaLabel.whatsapp",
     value: me.whatsapp.label,
     href: me.whatsapp.href,

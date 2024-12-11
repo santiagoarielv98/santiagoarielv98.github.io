@@ -16,7 +16,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo } from "react";
-import GitHubIcon from "./icons/GitHubIcon";
+import { FaGithub } from "react-icons/fa";
 import { Badge } from "./ui/badge";
 
 export default function Projects() {
@@ -83,7 +83,7 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     aria-label={a11y("ariaLabel.github")}
                   >
-                    <GitHubIcon className="mr-2 h-4 w-4" />
+                    <FaGithub className="mr-2 h-4 w-4" />
                     {t("repo")}
                   </Link>
                 </Button>

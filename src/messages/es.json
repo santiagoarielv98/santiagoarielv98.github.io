@@ -190,7 +190,8 @@
       "contact": "Contacto",
       "demo": "Demo",
       "footer": "Pie de página"
-    }
+    },
+    "themeToggle": "Alternar Tema"
   },
   "sidebar": {
     "sheetTitle": "Menu de Navegación",
