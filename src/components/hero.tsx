@@ -31,6 +31,7 @@ export default function Hero() {
               rel="noopener noreferrer"
               onClick={() => {
                 toast({
+                  variant: "success",
                   title: a11y("downloadingCV.title"),
                   description: a11y("downloadingCV.description"),
                 });
