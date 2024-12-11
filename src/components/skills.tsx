@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { skillsList } from "@/globals/info";
+import { skillsList } from "@/globals/skills";
 import { techs } from "@/globals/technologies";
 import { useTranslations } from "next-intl";
 import { useMemo } from "react";

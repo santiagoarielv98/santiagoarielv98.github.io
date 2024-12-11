@@ -8,8 +8,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { contactInfo } from "@/globals/info";
-import { ExternalLink } from "lucide-react";
+import { contactInfo } from "@/globals/contact";
+import { FaExternalLinkAlt } from "react-icons/fa";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { ContactForm } from "./contact-form";
@@ -50,7 +50,10 @@ export default function Contact() {
                         <span className="mr-auto truncate font-medium">
                           {item.value}
                         </span>
-                        <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                        <FaExternalLinkAlt
+                          className="h-4 w-4"
+                          aria-hidden="true"
+                        />
                       </Link>
                     </Button>
                   </li>

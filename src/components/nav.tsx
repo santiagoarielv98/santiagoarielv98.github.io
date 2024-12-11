@@ -2,14 +2,14 @@
 
 import { setUserLocale } from "@/lib/locale";
 import {
-  Briefcase,
-  Code,
-  Download,
-  FileText,
-  Home,
-  Mail,
-  User,
-} from "lucide-react";
+  FaBriefcase,
+  FaCode,
+  FaFileDownload,
+  FaFileAlt,
+  FaHome,
+  FaEnvelope,
+  FaUser,
+} from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
@@ -31,19 +31,21 @@ import {
   SidebarTrigger,
   useSidebar,
 } from "@/components/ui/sidebar";
-import { contactInfo, me } from "@/globals/info";
+import { contactInfo } from "@/globals/contact";
+import { me } from "@/globals/info";
+
 import { useToast } from "@/hooks/use-toast";
 import type { Locale } from "@/i18n/config";
 import { cn } from "@/lib/utils";
 import { useLocale, useTranslations } from "next-intl";
 
 const navItems = [
-  { name: "home", href: "/#hero", icon: Home },
-  { name: "about", href: "/#about", icon: User },
-  { name: "skills", href: "/#skills", icon: Code },
-  { name: "resume", href: "/#resume", icon: FileText },
-  { name: "projects", href: "/#projects", icon: Briefcase },
-  { name: "contact", href: "/#contact", icon: Mail },
+  { name: "home", href: "/#hero", icon: FaHome },
+  { name: "about", href: "/#about", icon: FaUser },
+  { name: "skills", href: "/#skills", icon: FaCode },
+  { name: "resume", href: "/#resume", icon: FaFileAlt },
+  { name: "projects", href: "/#projects", icon: FaBriefcase },
+  { name: "contact", href: "/#contact", icon: FaEnvelope },
 ];
 
 export function Nav() {
@@ -132,7 +134,7 @@ export function Nav() {
             });
           }}
         >
-          <Download className="mr-2 h-4 w-4" />
+          <FaFileDownload className="mr-2 h-4 w-4" />
           {t("downloadCV")}
         </Link>
       </>

@@ -1,7 +1,3 @@
-import { Cloud, Code, Mail, Phone, Server } from "lucide-react";
-import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
-// 02202 52-9223
-
 export const me = {
   name: "Santiago",
   middleName: "Ariel",
@@ -54,39 +50,6 @@ export const me = {
   },
 };
 
-export const contactInfo = [
-  {
-    icon: FaGithub,
-    label: "ariaLabel.github",
-    value: me.github.label,
-    href: me.github.href,
-  },
-  {
-    icon: FaLinkedin,
-    label: "ariaLabel.linkedin",
-    value: me.linkedin.label,
-    href: me.linkedin.href,
-  },
-  {
-    icon: FaWhatsapp,
-    label: "ariaLabel.whatsapp",
-    value: me.whatsapp.label,
-    href: me.whatsapp.href,
-  },
-  {
-    icon: Phone,
-    label: "ariaLabel.phone",
-    value: me.telephone.label,
-    href: me.telephone.value,
-  },
-  {
-    icon: Mail,
-    label: "ariaLabel.email",
-    value: me.email.label,
-    href: me.email.value,
-  },
-];
-
 export interface Project {
   repo?: string;
   demo?: string;
@@ -133,51 +96,5 @@ export const projectsList: Record<string, Project> = {
     image: "/assets/img/projects/sv-frontendmentor.webp",
     demo: "https://santiagoarielv98.github.io/sv-frontmentor-solutions/",
     techs: ["html", "tailwindcss", "javascript"],
-  },
-};
-
-export const skillsList = {
-  frontend: {
-    icon: Code,
-    skills: [
-      "typescript",
-      "react",
-      "redux",
-      "mui",
-      "sass",
-      "nextjs",
-      "angular",
-      "figma",
-      "html",
-      "tailwindcss",
-      "bootstrap",
-      "inertia",
-      "leaflet",
-      "tanstack",
-      "javascript",
-    ],
-  },
-  backend: {
-    icon: Server,
-    skills: [
-      "java",
-      "spring",
-      "nestjs",
-      "firebase",
-      "aws",
-      "docker",
-      "mongodb",
-      "mysql",
-      "postgresql",
-      "gcp",
-      "laravel",
-      "supabase",
-      "swagger",
-      "axios",
-    ],
-  },
-  cloud: {
-    icon: Cloud,
-    skills: ["aws", "gcp", "firebase", "supabase", "docker"],
   },
 };

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowUp } from "lucide-react";
+import { FaArrowUp } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 export function ScrollToTop() {
@@ -39,7 +39,7 @@ export function ScrollToTop() {
       className="fixed bottom-4 right-4 z-50"
     >
       <Button onClick={scrollToTop} size="icon">
-        <ArrowUp className="h-4 w-4" />
+        <FaArrowUp className="h-4 w-4" />
       </Button>
     </motion.div>
   );

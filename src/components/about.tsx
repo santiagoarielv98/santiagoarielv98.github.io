@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { Phone, Mail, MapPin, Globe } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { me } from "@/globals/info";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaGlobe } from "react-icons/fa";
 
 export default function About() {
   const t = useTranslations("about");
@@ -36,28 +36,28 @@ export default function About() {
             </p>
             <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
               <div className="flex items-center space-x-2">
-                <Phone
+                <FaPhone
                   className="h-5 w-5 text-primary"
                   aria-label={a11y("ariaLabel.phone")}
                 />
                 <span>{t("phone")}</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Mail
+                <FaEnvelope
                   className="h-5 w-5 text-primary"
                   aria-label={a11y("ariaLabel.email")}
                 />
                 <span>{t("email")}</span>
               </div>
               <div className="flex items-center space-x-2">
-                <MapPin
+                <FaMapMarkerAlt
                   className="h-5 w-5 text-primary"
                   aria-label={a11y("ariaLabel.location")}
                 />
                 <span>{t("location")}</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Globe
+                <FaGlobe
                   className="h-5 w-5 text-primary"
                   aria-label={a11y("ariaLabel.website")}
                 />

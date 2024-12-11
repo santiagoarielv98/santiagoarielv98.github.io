@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { me } from "@/globals/info";
 import { toast } from "@/hooks/use-toast";
-import { Download } from "lucide-react";
+import { FaFileDownload } from "react-icons/fa";
 import { useTranslations } from "next-intl";
 
 export default function Hero() {
@@ -36,7 +36,7 @@ export default function Hero() {
                 });
               }}
             >
-              <Download className="h-5 w-5" aria-hidden="true" />
+              <FaFileDownload className="h-5 w-5" aria-hidden="true" />
               {t("button")}
             </a>
           </Button>

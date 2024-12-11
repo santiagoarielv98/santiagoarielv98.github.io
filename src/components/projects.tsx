@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/card";
 import { projectsList } from "@/globals/info";
 import { techs } from "@/globals/technologies";
-import { ExternalLink } from "lucide-react";
+import { FaExternalLinkAlt } from "react-icons/fa";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
@@ -98,7 +98,7 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     aria-label={a11y("ariaLabel.demo")}
                   >
-                    <ExternalLink className="mr-2 h-4 w-4" />
+                    <FaExternalLinkAlt className="mr-2 h-4 w-4" />
                     {t("demo")}
                   </Link>
                 </Button>
