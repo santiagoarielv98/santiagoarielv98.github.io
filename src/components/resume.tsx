@@ -7,8 +7,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { techs } from "@/globals/technologies";
 import { useTranslations } from "next-intl";
+import TechIcon from "./TechIcon";
 
 export interface TimelineItem {
   title: string;
@@ -68,19 +68,9 @@ function TimelineSection({
             </CardContent>
             <CardFooter>
               <div className="flex flex-wrap gap-2">
-                {item.tags.map((tag) => {
-                  const { name, icon: TechIcon } = techs[tag] ?? techs["code"];
-                  return (
-                    <Badge
-                      key={tag}
-                      variant="secondary"
-                      className="flex items-center gap-2"
-                    >
-                      <TechIcon className="h-3 w-3" />
-                      {name}
-                    </Badge>
-                  );
-                })}
+                {item.tags.map((name) => (
+                  <TechIcon key={name} name={name} />
+                ))}
               </div>
             </CardFooter>
           </Card>

@@ -37,28 +37,32 @@ export default function Contact() {
             </CardHeader>
             <CardContent>
               <ul className="space-y-4">
-                {contactInfo.map((item, index) => (
-                  <li key={index}>
-                    <Button asChild variant="ghost" className="flex">
-                      <Link
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={a11y(item.label)}
-                      >
-                        <item.icon className="h-5 w-5" aria-hidden="true" />
-                        <span>{a11y(item.label)}:</span>
-                        <span className="mr-auto truncate font-medium">
-                          {item.value}
-                        </span>
-                        <FaExternalLinkAlt
-                          className="h-4 w-4"
-                          aria-hidden="true"
-                        />
-                      </Link>
-                    </Button>
-                  </li>
-                ))}
+                {contactInfo.map((item, index) => {
+                  const Icon = item.icon;
+                  const ariaLabel = a11y(item.label);
+                  return (
+                    <li key={index}>
+                      <Button asChild variant="ghost" className="flex">
+                        <Link
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={ariaLabel}
+                        >
+                          <Icon className="h-5 w-5" aria-hidden="true" />
+                          <span>{ariaLabel}:</span>
+                          <span className="mr-auto truncate font-medium">
+                            {item.value}
+                          </span>
+                          <FaExternalLinkAlt
+                            className="h-4 w-4"
+                            aria-hidden="true"
+                          />
+                        </Link>
+                      </Button>
+                    </li>
+                  );
+                })}
               </ul>
             </CardContent>
           </Card>

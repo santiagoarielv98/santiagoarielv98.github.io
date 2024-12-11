@@ -1,18 +1,10 @@
 "use client";
 
 import { setUserLocale } from "@/lib/locale";
-import {
-  FaBriefcase,
-  FaCode,
-  FaFileDownload,
-  FaFileAlt,
-  FaHome,
-  FaEnvelope,
-  FaUser,
-} from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
+import { FaFileDownload } from "react-icons/fa";
 
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
@@ -34,29 +26,20 @@ import {
 import { contactInfo } from "@/globals/contact";
 import { me } from "@/globals/info";
 
+import { navItems } from "@/globals/nav";
 import { useToast } from "@/hooks/use-toast";
 import type { Locale } from "@/i18n/config";
-import { cn } from "@/lib/utils";
 import { useLocale, useTranslations } from "next-intl";
-
-const navItems = [
-  { name: "home", href: "/#hero", icon: FaHome },
-  { name: "about", href: "/#about", icon: FaUser },
-  { name: "skills", href: "/#skills", icon: FaCode },
-  { name: "resume", href: "/#resume", icon: FaFileAlt },
-  { name: "projects", href: "/#projects", icon: FaBriefcase },
-  { name: "contact", href: "/#contact", icon: FaEnvelope },
-];
 
 export function Nav() {
   const { openMobile, setOpenMobile } = useSidebar();
-  const [, startTransition] = React.useTransition();
+  const [isPending, startTransition] = React.useTransition();
 
   const t = useTranslations("nav");
   const a11y = useTranslations("accessibility");
 
   const { toast } = useToast();
-  const [activeSection, setActiveSection] = React.useState("/");
+  const [activeSection, setActiveSection] = React.useState("#hero");
   const locale = useLocale();
 
   const setLanguage = async (lang: Locale) => {
@@ -65,7 +48,10 @@ export function Nav() {
     });
   };
 
-  const handleNavItemClick = (href: string) => {
+  const handleNavItemClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const href = e.currentTarget.getAttribute("href") || "#hero";
+
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -90,9 +76,9 @@ export function Nav() {
         return false;
       });
       if (currentSection) {
-        setActiveSection(`/#${currentSection}`);
+        setActiveSection(`#${currentSection}`);
       } else if (window.scrollY === 0) {
-        setActiveSection("/");
+        setActiveSection("#hero");
       }
     };
     handleScroll();
@@ -100,47 +86,6 @@ export function Nav() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const NavContent = React.useCallback(
-    () => (
-      <>
-        {navItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            aria-label={a11y(`ariaLabel.${item.name}`)}
-            className={cn(
-              "flex h-9 items-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-accent-foreground",
-              activeSection === item.href &&
-                "bg-accent/50 text-accent-foreground",
-            )}
-            onClick={() => handleNavItemClick(item.href)}
-          >
-            <item.icon className="mr-2 h-4 w-4" />
-            {t(`sections.${item.name}`)}
-          </Link>
-        ))}
-        <Link
-          href={me.cv.href}
-          aria-label={t("downloadCV")}
-          className="flex h-9 items-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-          download={me.cv.download}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => {
-            toast({
-              title: a11y("downloadingCV.title"),
-              description: a11y("downloadingCV.description"),
-            });
-          }}
-        >
-          <FaFileDownload className="mr-2 h-4 w-4" />
-          {t("downloadCV")}
-        </Link>
-      </>
-    ),
-    [activeSection, t, a11y, toast, openMobile],
-  );
 
   return (
     <>
@@ -154,28 +99,69 @@ export function Nav() {
             className="h-24 w-24 rounded-full"
             priority
           />
-          <Link href="/" className="text-2xl font-bold">
+          <Link href="#" className="text-2xl font-bold">
             {`${me.name} ${me.lastName}`}
           </Link>
         </SidebarHeader>
         <SidebarContent className="px-4 py-6">
-          <NavContent />
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            return (
+              <Button
+                key={item.href}
+                asChild
+                variant="ghost"
+                className="justify-start data-[active=true]:bg-accent data-[active=true]:text-accent-foreground"
+              >
+                <Link
+                  href={item.href}
+                  aria-label={a11y(`ariaLabel.${item.name}`)}
+                  data-active={activeSection === item.href}
+                  onClick={handleNavItemClick}
+                >
+                  <Icon className="mr-2 h-4 w-4" />
+                  {t(`sections.${item.name}`)}
+                </Link>
+              </Button>
+            );
+          })}
+          <Button asChild variant="ghost" className="justify-start">
+            <Link
+              href={me.cv.href}
+              aria-label={t("downloadCV")}
+              download={me.cv.download}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                toast({
+                  title: a11y("downloadingCV.title"),
+                  description: a11y("downloadingCV.description"),
+                });
+              }}
+            >
+              <FaFileDownload className="mr-2 h-4 w-4" />
+              {t("downloadCV")}
+            </Link>
+          </Button>
         </SidebarContent>
         <Separator />
         <SidebarFooter className="py-4">
           <div className="flex justify-center space-x-2">
-            {contactInfo.map((item, index) => (
-              <Button key={index} variant="ghost" size="icon" asChild>
-                <Link
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <item.icon className="h-5 w-5" />
-                  <span className="sr-only">{item.icon.name}</span>
-                </Link>
-              </Button>
-            ))}
+            {contactInfo.map((item, index) => {
+              const Item = item.icon;
+              return (
+                <Button key={index} variant="ghost" size="icon" asChild>
+                  <Link
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Item className="h-5 w-5" />
+                    <span className="sr-only">{item.icon.name}</span>
+                  </Link>
+                </Button>
+              );
+            })}
           </div>
         </SidebarFooter>
         <Separator />
@@ -184,7 +170,7 @@ export function Nav() {
             <ThemeToggle />
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline" className="px-2">
+                <Button variant="outline" className="px-2" disabled={isPending}>
                   <Image
                     src={`https://flagcdn.com/24x18/${locale === "es" ? "es" : "gb"}.png`}
                     alt={locale === "es" ? "Español" : "English"}

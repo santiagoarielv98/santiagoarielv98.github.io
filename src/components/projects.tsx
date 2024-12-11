@@ -10,14 +10,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { projectsList } from "@/globals/info";
-import { techs } from "@/globals/technologies";
-import { FaExternalLinkAlt } from "react-icons/fa";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { FaGithub } from "react-icons/fa";
-import { Badge } from "./ui/badge";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import TechIcon from "./TechIcon";
 
 export default function Projects() {
   const t = useTranslations("projects");
@@ -58,20 +56,9 @@ export default function Projects() {
             </CardHeader>
             <CardContent>
               <div className="flex flex-wrap gap-2">
-                {item.techs.map((tech, techIndex) => {
-                  const { name, icon: TechIcon } = techs[tech] ?? techs["code"];
-
-                  return (
-                    <Badge
-                      key={techIndex}
-                      variant="secondary"
-                      className="flex items-center gap-2"
-                    >
-                      <TechIcon className="h-3 w-3" />
-                      {name}
-                    </Badge>
-                  );
-                })}
+                {item.techs.map((name) => (
+                  <TechIcon key={name} name={name} />
+                ))}
               </div>
             </CardContent>
             <CardFooter className="mt-auto flex justify-between">

@@ -1,9 +1,8 @@
-import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { skillsList } from "@/globals/skills";
-import { techs } from "@/globals/technologies";
 import { useTranslations } from "next-intl";
 import React from "react";
+import TechIcon from "./TechIcon";
 
 export default function Skills() {
   const t = useTranslations("skills");
@@ -12,6 +11,7 @@ export default function Skills() {
   const skills = React.useMemo(
     () =>
       Object.entries(skillsList).map(([key, item]) => {
+        const Icon = item.icon;
         const title = t(`categories.${key}.title`);
         const description = t(`categories.${key}.description`);
 
@@ -19,10 +19,7 @@ export default function Skills() {
           <Card key={key}>
             <CardHeader>
               <div className="flex items-center space-x-2">
-                <item.icon
-                  className="h-6 w-6 text-primary"
-                  aria-hidden="true"
-                />
+                <Icon className="h-6 w-6 text-primary" aria-hidden="true" />
                 <CardTitle aria-label={a11y(`ariaLabel.${key}`)}>
                   {title}
                 </CardTitle>
@@ -31,20 +28,9 @@ export default function Skills() {
             <CardContent>
               <p className="mb-4">{description}</p>
               <div className="flex flex-wrap gap-2">
-                {item.skills.map((skill) => {
-                  const { name, icon: SkillIcon } =
-                    techs[skill] ?? techs["code"];
-                  return (
-                    <Badge
-                      key={skill}
-                      variant="secondary"
-                      className="flex items-center gap-2"
-                    >
-                      <SkillIcon className="h-3 w-3" />
-                      {name}
-                    </Badge>
-                  );
-                })}
+                {item.skills.map((name) => (
+                  <TechIcon key={name} name={name} />
+                ))}
               </div>
             </CardContent>
           </Card>
