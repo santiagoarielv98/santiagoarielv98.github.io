@@ -11,6 +11,7 @@ export default function About() {
       id="about"
       className="relative z-10 px-6 py-16"
       aria-labelledby="about-title"
+      aria-label={a11y("ariaLabel.about")}
     >
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-8 lg:grid-cols-12">

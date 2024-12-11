@@ -58,6 +58,7 @@ export default function Skills() {
       id="skills"
       className="relative z-10 px-6 py-16"
       aria-labelledby="skills-title"
+      aria-label={a11y("ariaLabel.skills")}
     >
       <div className="mx-auto max-w-6xl">
         <h2 id="skills-title" className="mb-8 text-center text-3xl font-bold">

@@ -23,6 +23,7 @@ export default function Contact() {
       id="contact"
       className="relative z-10 px-6 py-16"
       aria-labelledby="contact-title"
+      aria-label={a11y("ariaLabel.contact")}
     >
       <div className="mx-auto max-w-6xl">
         <h2 id="contact-title" className="mb-8 text-center text-3xl font-bold">

@@ -16,6 +16,7 @@ export default function Hero() {
       <section
         className="flex min-h-[90vh] items-center justify-center bg-cover bg-center px-6 py-24 text-center before:absolute before:inset-0 before:z-[-1] before:bg-[url('/assets/img/light.webp')] before:bg-cover before:bg-center before:opacity-30 before:blur-sm before:dark:bg-[url('/assets/img/dark.webp')] before:dark:blur-sm"
         aria-labelledby="hero-title"
+        aria-label={a11y("ariaLabel.home")}
         id="hero"
       >
         <div className="mx-auto max-w-3xl rounded-lg p-8">

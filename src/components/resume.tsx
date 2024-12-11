@@ -92,6 +92,7 @@ function TimelineSection({
 
 export default function Resume() {
   const t = useTranslations("resume");
+  const a11y = useTranslations("accessibility");
 
   const workExperience = t.raw("workExperienceList");
   const education = t.raw("educationList");
@@ -101,6 +102,7 @@ export default function Resume() {
       id="resume"
       className="relative z-10 px-6 py-16"
       aria-labelledby="resume-title"
+      aria-label={a11y("ariaLabel.resume")}
     >
       <div className="mx-auto max-w-6xl">
         <h2 id="resume-title" className="mb-8 text-center text-3xl font-bold">

@@ -59,16 +59,16 @@ export default function Projects() {
             <CardContent>
               <div className="flex flex-wrap gap-2">
                 {item.techs.map((tech, techIndex) => {
-                  const currentTech =
-                    tech in techs ? techs[tech] : techs["code"];
+                  const { name, icon: TechIcon } = techs[tech] ?? techs["code"];
+
                   return (
                     <Badge
                       key={techIndex}
                       variant="secondary"
                       className="flex items-center gap-2"
                     >
-                      <currentTech.icon className="h-3 w-3" />
-                      {currentTech.name}
+                      <TechIcon className="h-3 w-3" />
+                      {name}
                     </Badge>
                   );
                 })}
@@ -115,6 +115,7 @@ export default function Projects() {
       id="projects"
       className="relative z-10 px-6 py-16"
       aria-labelledby="projects-title"
+      aria-label={a11y("ariaLabel.projects")}
     >
       <div className="mx-auto max-w-6xl">
         <h2 id="projects-title" className="mb-8 text-center text-3xl font-bold">

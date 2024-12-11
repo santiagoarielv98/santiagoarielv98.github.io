@@ -10,7 +10,7 @@ import { LoadParticles } from "@/components/particles";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main>
       <AnimatedSection>
         <Hero />
       </AnimatedSection>
