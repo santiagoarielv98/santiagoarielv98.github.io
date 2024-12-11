@@ -195,7 +195,11 @@
       "title": "Downloading CV",
       "description": "Thank you for your interest. Your download will start shortly."
     },
-    "themeToggle": "Toggle Theme"
+    "themeToggle": "Toggle Theme",
+    "languageChanged": {
+      "title": "Idioma cambiado",
+      "description": "El idioma se ha cambiado correctamente."
+    }
   },
   "sidebar": {
     "sheetTitle": "Navigation Menu",

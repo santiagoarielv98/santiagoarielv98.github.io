@@ -43,8 +43,16 @@ export function Nav() {
   const locale = useLocale();
 
   const setLanguage = async (lang: Locale) => {
+    if (lang === locale) return;
     startTransition(() => {
-      setUserLocale(lang);
+      setUserLocale(lang).then(() => {
+        toast({
+          variant: "success",
+          title: a11y("languageChanged.title"),
+          description: a11y("languageChanged.description"),
+          duration: 2000,
+        });
+      });
     });
   };
 
