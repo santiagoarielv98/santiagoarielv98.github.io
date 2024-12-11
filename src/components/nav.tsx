@@ -8,7 +8,6 @@ import {
   FileText,
   Home,
   Mail,
-  Menu,
   User,
 } from "lucide-react";
 import Image from "next/image";
@@ -30,15 +29,16 @@ import {
   SidebarFooter,
   SidebarHeader,
   SidebarTrigger,
+  useSidebar,
 } from "@/components/ui/sidebar";
+import { contactInfo, me } from "@/globals/info";
 import { useToast } from "@/hooks/use-toast";
 import type { Locale } from "@/i18n/config";
 import { cn } from "@/lib/utils";
 import { useLocale, useTranslations } from "next-intl";
-import { contactInfo, me } from "@/globals/info";
 
 const navItems = [
-  { name: "home", href: "/", icon: Home },
+  { name: "home", href: "#hero", icon: Home },
   { name: "about", href: "/#about", icon: User },
   { name: "skills", href: "/#skills", icon: Code },
   { name: "resume", href: "/#resume", icon: FileText },
@@ -47,6 +47,7 @@ const navItems = [
 ];
 
 export function Nav() {
+  const { openMobile, setOpenMobile } = useSidebar();
   const [, startTransition] = React.useTransition();
 
   const t = useTranslations("nav");
@@ -60,6 +61,16 @@ export function Nav() {
     startTransition(() => {
       setUserLocale(lang);
     });
+  };
+
+  const handleNavItemClick = (href: string) => {
+    const element = document.querySelector(href.replace("/", ""));
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    if (openMobile) {
+      setOpenMobile(false);
+    }
   };
 
   React.useEffect(() => {
@@ -101,6 +112,7 @@ export function Nav() {
               activeSection === item.href &&
                 "bg-accent/50 text-accent-foreground",
             )}
+            onClick={() => handleNavItemClick(item.href)}
           >
             <item.icon className="mr-2 h-4 w-4" />
             {t(`sections.${item.name}`)}
@@ -125,7 +137,7 @@ export function Nav() {
         </Link>
       </>
     ),
-    [activeSection, t, a11y, toast],
+    [activeSection, t, a11y, toast, openMobile],
   );
 
   return (
@@ -204,12 +216,7 @@ export function Nav() {
           </div>
         </SidebarFooter>
       </Sidebar>
-      <SidebarTrigger className="fixed left-4 top-4 z-50 md:hidden">
-        <Button variant="outline" size="icon">
-          <Menu className="h-5 w-5" />
-          <span className="sr-only">Toggle menu</span>
-        </Button>
-      </SidebarTrigger>
+      <SidebarTrigger className="fixed left-4 top-4 z-50 md:hidden" />
     </>
   );
 }
