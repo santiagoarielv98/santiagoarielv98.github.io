@@ -6,7 +6,7 @@ import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
 import { useTranslations } from "next-intl";
 
-import { CiBurger } from "react-icons/ci";
+import { FaHamburger } from "react-icons/fa";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -193,6 +193,7 @@ const Sidebar = React.forwardRef<
   ) => {
     const { isMobile, state, openMobile, setOpenMobile } = useSidebar();
     const t = useTranslations("sidebar");
+    const a11y = useTranslations("accessibility");
 
     if (isMobile) {
       return (
@@ -228,6 +229,7 @@ const Sidebar = React.forwardRef<
         data-collapsible={state === "collapsed" ? collapsible : ""}
         data-variant={variant}
         data-side={side}
+        aria-label={a11y("ariaLabel.sidebar")}
       >
         {/* This is what handles the sidebar gap on desktop */}
         <div
@@ -272,6 +274,7 @@ const SidebarTrigger = React.forwardRef<
   React.ComponentProps<typeof Button>
 >(({ className, onClick, ...props }, ref) => {
   const { toggleSidebar } = useSidebar();
+  const a11y = useTranslations("accessibility");
 
   return (
     <Button
@@ -284,10 +287,11 @@ const SidebarTrigger = React.forwardRef<
         onClick?.(event);
         toggleSidebar();
       }}
+      aria-label={a11y("ariaLabel.sidebarToggle")}
       {...props}
     >
-      <CiBurger className="scale-125" />
-      <span className="sr-only">Toggle Sidebar</span>
+      <FaHamburger />
+      <span className="sr-only">{a11y("ariaLabel.sidebarToggle")}</span>
     </Button>
   );
 });
@@ -298,15 +302,16 @@ const SidebarRail = React.forwardRef<
   React.ComponentProps<"button">
 >(({ className, ...props }, ref) => {
   const { toggleSidebar } = useSidebar();
+  const a11y = useTranslations("accessibility");
 
   return (
     <button
       ref={ref}
       data-sidebar="rail"
-      aria-label="Toggle Sidebar"
+      aria-label={a11y("ariaLabel.sidebarToggle")}
       tabIndex={-1}
       onClick={toggleSidebar}
-      title="Toggle Sidebar"
+      title={a11y("ariaLabel.sidebarToggle")}
       className={cn(
         "absolute inset-y-0 z-20 hidden w-4 -translate-x-1/2 transition-all ease-linear after:absolute after:inset-y-0 after:left-1/2 after:w-[2px] hover:after:bg-sidebar-border group-data-[side=left]:-right-4 group-data-[side=right]:left-0 sm:flex",
         "[[data-side=left]_&]:cursor-w-resize [[data-side=right]_&]:cursor-e-resize",

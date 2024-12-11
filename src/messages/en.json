@@ -186,7 +186,10 @@
       "contact": "Contact",
       "demo": "Demo",
       "footer": "Footer",
-      "profile": "My Profile Picture"
+      "profile": "My Profile Picture",
+      "sidebar": "Sidebar",
+      "sidebarToggle": "Toggle sidebar",
+      "sidebarMenu": "Sidebar menu"
     },
     "downloadingCV": {
       "title": "Downloading CV",

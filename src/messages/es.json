@@ -186,7 +186,10 @@
       "contact": "Contacto",
       "demo": "Demo",
       "footer": "Pie de página",
-      "profile": "Mi Foto de Perfil"
+      "profile": "Mi Foto de Perfil",
+      "sidebar": "Barra lateral",
+      "sidebarToggle": "Alternar barra lateral",
+      "sidebarMenu": "Menú de la barra lateral"
     },
     "downloadingCV": {
       "title": "Descargando CV",
