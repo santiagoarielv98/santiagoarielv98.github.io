@@ -1,3 +1,4 @@
+import { me } from "@/globals/info";
 import { useTranslations } from "next-intl";
 
 export function Footer() {
@@ -11,7 +12,7 @@ export function Footer() {
     >
       <div className="container mx-auto text-center">
         <p id="footer-title">
-          &copy; {new Date().getFullYear()} Santiago Villanueva.{" "}
+          &copy; {new Date().getFullYear()} {me.name} {me.lastName}.{" "}
           {t("copyright")}
         </p>
       </div>

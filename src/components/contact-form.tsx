@@ -15,7 +15,7 @@ import { useToast } from "@/hooks/use-toast";
 import { sendMessage } from "@/services/discord";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
@@ -34,7 +34,7 @@ const formSchema = z.object({
 
 export function ContactForm() {
   const t = useTranslations("contact");
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
   const { toast } = useToast();
 
   const form = useForm<z.infer<typeof formSchema>>({

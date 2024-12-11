@@ -129,8 +129,8 @@ export function Nav() {
           rel="noopener noreferrer"
           onClick={() => {
             toast({
-              title: t("downloadingCV.title"),
-              description: t("downloadingCV.description"),
+              title: a11y("downloadingCV.title"),
+              description: a11y("downloadingCV.description"),
             });
           }}
         >

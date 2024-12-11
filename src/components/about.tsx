@@ -19,7 +19,7 @@ export default function About() {
             <Image
               className="h-auto w-full rounded-full"
               src={me.image.sm}
-              alt="Mi Foto de Perfil"
+              alt={a11y("ariaLabel.profile")}
               priority
               width={350}
               height={350}

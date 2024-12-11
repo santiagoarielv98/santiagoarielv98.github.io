@@ -3,13 +3,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { skillsList } from "@/globals/skills";
 import { techs } from "@/globals/technologies";
 import { useTranslations } from "next-intl";
-import { useMemo } from "react";
+import React from "react";
 
 export default function Skills() {
   const t = useTranslations("skills");
   const a11y = useTranslations("accessibility");
 
-  const skills = useMemo(
+  const skills = React.useMemo(
     () =>
       Object.entries(skillsList).map(([key, item]) => {
         const title = t(`categories.${key}.title`);
@@ -32,16 +32,16 @@ export default function Skills() {
               <p className="mb-4">{description}</p>
               <div className="flex flex-wrap gap-2">
                 {item.skills.map((skill) => {
-                  const currentTech =
-                    skill in techs ? techs[skill] : techs["code"];
+                  const { name, icon: SkillIcon } =
+                    techs[skill] ?? techs["code"];
                   return (
                     <Badge
                       key={skill}
                       variant="secondary"
                       className="flex items-center gap-2"
                     >
-                      <currentTech.icon className="h-3 w-3" />
-                      {currentTech.name}
+                      <SkillIcon className="h-3 w-3" />
+                      {name}
                     </Badge>
                   );
                 })}

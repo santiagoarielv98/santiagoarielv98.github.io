@@ -15,7 +15,7 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo } from "react";
+import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { Badge } from "./ui/badge";
 
@@ -23,7 +23,7 @@ export default function Projects() {
   const t = useTranslations("projects");
   const a11y = useTranslations("accessibility");
 
-  const projects = useMemo(
+  const projects = React.useMemo(
     () =>
       Object.entries(projectsList).map(([name, item]) => {
         const title = t(`projectsList.${name}.title`);

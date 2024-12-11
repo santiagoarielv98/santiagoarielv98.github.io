@@ -145,10 +145,6 @@
   "nav": {
     "portfolio": "My Portfolio",
     "downloadCV": "Download CV",
-    "downloadingCV": {
-      "title": "Downloading CV",
-      "description": "Thank you for your interest. Your download will start shortly."
-    },
     "sections": {
       "home": "Home",
       "about": "About Me",
@@ -189,7 +185,12 @@
       "resume": "Resume",
       "contact": "Contact",
       "demo": "Demo",
-      "footer": "Footer"
+      "footer": "Footer",
+      "profile": "My Profile Picture"
+    },
+    "downloadingCV": {
+      "title": "Downloading CV",
+      "description": "Thank you for your interest. Your download will start shortly."
     },
     "themeToggle": "Toggle Theme"
   },

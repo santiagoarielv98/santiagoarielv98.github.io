@@ -145,10 +145,6 @@
   "nav": {
     "portfolio": "Mi Portfolio",
     "downloadCV": "Descargar CV",
-    "downloadingCV": {
-      "title": "Descargando CV",
-      "description": "Gracias por tu interés. Tu descarga comenzará en breve."
-    },
     "sections": {
       "home": "Inicio",
       "about": "Sobre mí",
@@ -189,7 +185,12 @@
       "resume": "Trayectoria",
       "contact": "Contacto",
       "demo": "Demo",
-      "footer": "Pie de página"
+      "footer": "Pie de página",
+      "profile": "Mi Foto de Perfil"
+    },
+    "downloadingCV": {
+      "title": "Descargando CV",
+      "description": "Gracias por tu interés. Tu descarga comenzará en breve."
     },
     "themeToggle": "Alternar Tema"
   },

@@ -9,7 +9,6 @@ import { useTranslations } from "next-intl";
 export default function Hero() {
   const t = useTranslations("hero");
   const a11y = useTranslations("accessibility");
-  const nav = useTranslations("nav");
 
   return (
     <div className="relative z-10 border-b-2 bg-background">
@@ -32,8 +31,8 @@ export default function Hero() {
               rel="noopener noreferrer"
               onClick={() => {
                 toast({
-                  title: nav("downloadingCV.title"),
-                  description: nav("downloadingCV.description"),
+                  title: a11y("downloadingCV.title"),
+                  description: a11y("downloadingCV.description"),
                 });
               }}
             >

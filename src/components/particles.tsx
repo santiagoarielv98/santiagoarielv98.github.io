@@ -1,139 +1,57 @@
 "use client";
 
-import {
-  type ISourceOptions,
-  MoveDirection,
-  OutMode,
-} from "@tsparticles/engine";
+import { commonOptions } from "@/globals/particles";
+import { type ISourceOptions } from "@tsparticles/engine";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { useEffect, useMemo, useState } from "react";
-// import { loadAll } from "@tsparticles/all"; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
-// import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
-import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
-// import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
+import { loadSlim } from "@tsparticles/slim";
+import React from "react";
 
 export const LoadParticles = () => {
-  const [init, setInit] = useState(false);
+  const [init, setInit] = React.useState(false);
 
-  // this should be run only once per application lifetime
-  useEffect(() => {
+  React.useEffect(() => {
     initParticlesEngine(async (engine) => {
-      // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-      // starting from v2 you can add only the features you need reducing the bundle size
-      //await loadAll(engine);
-      //await loadFull(engine);
       await loadSlim(engine);
-      //await loadBasic(engine);
     }).then(() => {
       setInit(true);
     });
   }, []);
 
-  const backgroundOptions: ISourceOptions = useMemo(
+  const backgroundOptions: ISourceOptions = React.useMemo(
     () => ({
-      preset: "snow",
-      fpsLimit: 120,
-      zLayers: 1,
-      interactivity: {
-        modes: {
-          push: {
-            quantity: 4,
-          },
-          repulse: {
-            distance: 100,
-            duration: 0.4,
-          },
-        },
-      },
+      ...commonOptions,
       particles: {
-        color: {
-          value: "#7b1fa2",
-        },
-        move: {
-          direction: MoveDirection.bottomRight,
-          enable: true,
-          outModes: {
-            default: OutMode.out,
-          },
-          random: true,
-          speed: 2,
-          straight: false,
-        },
+        ...commonOptions.particles,
         number: {
           density: {
             enable: true,
           },
           value: 40,
         },
-        opacity: {
-          value: 0.75,
-        },
-        shape: {
-          type: "circle",
-        },
         size: {
           value: { min: 1, max: 3 },
         },
       },
-      detectRetina: true,
     }),
     [],
   );
 
-  const frontOptions: ISourceOptions = useMemo(
+  const frontOptions: ISourceOptions = React.useMemo(
     () => ({
-      preset: "snow",
-      fpsLimit: 120,
-      interactivity: {
-        modes: {
-          push: {
-            quantity: 4,
-          },
-          repulse: {
-            distance: 100,
-            duration: 0.4,
-          },
-        },
-      },
+      ...commonOptions,
       particles: {
-        color: {
-          value: "#7b1fa2",
-        },
-        move: {
-          direction: MoveDirection.bottomRight,
-          enable: true,
-          outModes: {
-            default: OutMode.out,
-          },
-          random: true,
-          speed: 2,
-          straight: false,
-        },
+        ...commonOptions.particles,
         number: {
           density: {
             enable: true,
           },
           value: 5,
         },
-        opacity: {
-          value: 0.75,
-        },
-        shape: {
-          type: "circle",
-        },
-        shadow: {
-          blur: 5,
-          color: {
-            value: "#7b1fa2",
-          },
-          enable: true,
-        },
+
         size: {
           value: { min: 3, max: 5 },
         },
       },
-      detectRetina: true,
     }),
     [],
   );

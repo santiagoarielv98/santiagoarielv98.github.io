@@ -69,15 +69,15 @@ function TimelineSection({
             <CardFooter>
               <div className="flex flex-wrap gap-2">
                 {item.tags.map((tag) => {
-                  const currentTech = tag in techs ? techs[tag] : techs["code"];
+                  const { name, icon: TechIcon } = techs[tag] ?? techs["code"];
                   return (
                     <Badge
                       key={tag}
                       variant="secondary"
                       className="flex items-center gap-2"
                     >
-                      <currentTech.icon className="h-3 w-3" />
-                      {currentTech.name}
+                      <TechIcon className="h-3 w-3" />
+                      {name}
                     </Badge>
                   );
                 })}
