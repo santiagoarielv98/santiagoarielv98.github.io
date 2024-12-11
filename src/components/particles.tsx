@@ -64,7 +64,7 @@ export const LoadParticles = () => {
           density: {
             enable: true,
           },
-          value: 160,
+          value: 40,
         },
         opacity: {
           value: 0.75,
@@ -85,7 +85,6 @@ export const LoadParticles = () => {
     () => ({
       preset: "snow",
       fpsLimit: 120,
-      zLayers: 1,
       interactivity: {
         modes: {
           push: {
@@ -115,13 +114,20 @@ export const LoadParticles = () => {
           density: {
             enable: true,
           },
-          value: 20,
+          value: 5,
         },
         opacity: {
           value: 0.75,
         },
         shape: {
           type: "circle",
+        },
+        shadow: {
+          blur: 5,
+          color: {
+            value: "#7b1fa2",
+          },
+          enable: true,
         },
         size: {
           value: { min: 3, max: 5 },
@@ -135,9 +141,9 @@ export const LoadParticles = () => {
   if (init) {
     return (
       <div>
-        <Particles id="tsparticles" options={backgroundOptions} />
-        <div className="relative z-20" style={{ zIndex: 10 }}>
-          <Particles id="tsparticles" options={frontOptions} />
+        <Particles id="tsparticles-background" options={backgroundOptions} />
+        <div className="relative z-10" style={{ zIndex: 20 }}>
+          <Particles id="tsparticles-front" options={frontOptions} />
         </div>
       </div>
     );
