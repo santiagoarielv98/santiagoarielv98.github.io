@@ -21,7 +21,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative px-6 py-16"
+      className="relative z-10 px-6 py-16"
       aria-labelledby="contact-title"
     >
       <div className="mx-auto max-w-6xl">

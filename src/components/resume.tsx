@@ -34,7 +34,7 @@ function TimelineSection({
       </h3>
       <div className="space-y-4">
         {items.map((item, index) => (
-          <Card key={index} className="relative z-10">
+          <Card key={index}>
             <CardHeader className="pb-2">
               <CardTitle aria-label={a11y("ariaLabel.jobTitle")}>
                 {item.title}
@@ -97,7 +97,11 @@ export default function Resume() {
   const education = t.raw("educationList");
 
   return (
-    <section id="resume" className="px-6 py-16" aria-labelledby="resume-title">
+    <section
+      id="resume"
+      className="relative z-10 px-6 py-16"
+      aria-labelledby="resume-title"
+    >
       <div className="mx-auto max-w-6xl">
         <h2 id="resume-title" className="mb-8 text-center text-3xl font-bold">
           {t("title")}

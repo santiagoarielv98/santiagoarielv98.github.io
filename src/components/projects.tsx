@@ -43,7 +43,7 @@ export default function Projects() {
         return (
           <Card
             key={name}
-            className="z-10 mx-auto flex max-w-sm flex-col overflow-hidden"
+            className="mx-auto flex max-w-sm flex-col overflow-hidden"
           >
             <Image
               src={item.image}
@@ -113,7 +113,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="px-6 py-16"
+      className="relative z-10 px-6 py-16"
       aria-labelledby="projects-title"
     >
       <div className="mx-auto max-w-6xl">

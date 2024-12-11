@@ -30,7 +30,7 @@ export const LoadParticles = () => {
     });
   }, []);
 
-  const options: ISourceOptions = useMemo(
+  const backgroundOptions: ISourceOptions = useMemo(
     () => ({
       preset: "snow",
       fpsLimit: 120,
@@ -64,10 +64,10 @@ export const LoadParticles = () => {
           density: {
             enable: true,
           },
-          value: 80,
+          value: 160,
         },
         opacity: {
-          value: 0.5,
+          value: 0.75,
         },
         shape: {
           type: "circle",
@@ -82,7 +82,7 @@ export const LoadParticles = () => {
   );
 
   if (init) {
-    return <Particles id="tsparticles" options={options} />;
+    return <Particles id="tsparticles" options={backgroundOptions} />;
   }
 
   return <></>;

@@ -16,7 +16,7 @@ export default function Skills() {
         const description = t(`categories.${key}.description`);
 
         return (
-          <Card key={key} className="relative z-10">
+          <Card key={key}>
             <CardHeader>
               <div className="flex items-center space-x-2">
                 <item.icon
@@ -54,7 +54,11 @@ export default function Skills() {
   );
 
   return (
-    <section id="skills" className="px-6 py-16" aria-labelledby="skills-title">
+    <section
+      id="skills"
+      className="relative z-10 px-6 py-16"
+      aria-labelledby="skills-title"
+    >
       <div className="mx-auto max-w-6xl">
         <h2 id="skills-title" className="mb-8 text-center text-3xl font-bold">
           {t("title")}
