@@ -81,8 +81,66 @@ export const LoadParticles = () => {
     [],
   );
 
+  const frontOptions: ISourceOptions = useMemo(
+    () => ({
+      preset: "snow",
+      fpsLimit: 120,
+      zLayers: 1,
+      interactivity: {
+        modes: {
+          push: {
+            quantity: 4,
+          },
+          repulse: {
+            distance: 100,
+            duration: 0.4,
+          },
+        },
+      },
+      particles: {
+        color: {
+          value: "#7b1fa2",
+        },
+        move: {
+          direction: MoveDirection.bottomRight,
+          enable: true,
+          outModes: {
+            default: OutMode.out,
+          },
+          random: true,
+          speed: 2,
+          straight: false,
+        },
+        number: {
+          density: {
+            enable: true,
+          },
+          value: 20,
+        },
+        opacity: {
+          value: 0.75,
+        },
+        shape: {
+          type: "circle",
+        },
+        size: {
+          value: { min: 3, max: 5 },
+        },
+      },
+      detectRetina: true,
+    }),
+    [],
+  );
+
   if (init) {
-    return <Particles id="tsparticles" options={backgroundOptions} />;
+    return (
+      <div>
+        <Particles id="tsparticles" options={backgroundOptions} />
+        <div className="relative z-20" style={{ zIndex: 10 }}>
+          <Particles id="tsparticles" options={frontOptions} />
+        </div>
+      </div>
+    );
   }
 
   return <></>;
