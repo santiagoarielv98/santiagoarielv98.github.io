@@ -63,9 +63,9 @@ export function Nav() {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map((item) => item.name);
+      const sections = navItems.map((item) => item.href);
       const currentSection = sections.find((section) => {
-        const element = document.getElementById(section);
+        const element = document.querySelector(section);
         if (element) {
           const rect = element.getBoundingClientRect();
           return (
@@ -76,7 +76,7 @@ export function Nav() {
         return false;
       });
       if (currentSection) {
-        setActiveSection(`#${currentSection}`);
+        setActiveSection(currentSection);
       } else if (window.scrollY === 0) {
         setActiveSection("#hero");
       }

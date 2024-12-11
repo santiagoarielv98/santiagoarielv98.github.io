@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { skillsList } from "@/globals/skills";
 import { useTranslations } from "next-intl";
 import React from "react";
-import TechIcon from "./TechIcon";
+import TechIcon from "./tech-icon";
 
 export default function Skills() {
   const t = useTranslations("skills");
