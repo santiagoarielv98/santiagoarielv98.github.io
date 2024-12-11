@@ -64,7 +64,7 @@ export function Nav() {
   };
 
   const handleNavItemClick = (href: string) => {
-    const element = document.querySelector(href.replace("/", ""));
+    const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }

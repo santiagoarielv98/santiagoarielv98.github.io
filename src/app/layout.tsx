@@ -1,17 +1,17 @@
+import { Footer } from "@/components/footer"; // Import the Footer component
 import { Nav } from "@/components/nav";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { Toaster } from "@/components/ui/toaster";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
-import { Footer } from "@/components/footer"; // Import the Footer component
+import { Roboto } from "next/font/google";
 
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({ weight: "400", subsets: ["latin-ext"] });
 
 export const metadata: Metadata = {
   icons: {
@@ -54,13 +54,11 @@ export default async function RootLayout({
 }) {
   const locale = await getLocale();
 
-  // Providing all messages to the client
-  // side is the easiest way to get started
   const messages = await getMessages();
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={roboto.className}>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
             attribute="class"
