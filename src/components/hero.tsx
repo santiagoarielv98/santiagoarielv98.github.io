@@ -18,7 +18,7 @@ export default function Hero() {
         aria-label={a11y("ariaLabel.home")}
         id="hero"
       >
-        <div className="mx-auto max-w-3xl rounded-lg p-8">
+        <div className="mx-auto max-w-3xl rounded-lg md:p-8">
           <h1 id="hero-title" className="mb-4 text-4xl font-bold">
             {t("welcome")}
           </h1>
