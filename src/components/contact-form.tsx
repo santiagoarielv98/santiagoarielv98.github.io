@@ -17,6 +17,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { FaPaperPlane } from "react-icons/fa";
 import * as z from "zod";
 
 const formSchema = z.object({
@@ -34,7 +35,6 @@ const formSchema = z.object({
 
 export function ContactForm() {
   const t = useTranslations("contact");
-  const [isSubmitting, setIsSubmitting] = React.useState(false);
   const { toast } = useToast();
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -48,8 +48,6 @@ export function ContactForm() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsSubmitting(true);
-
     try {
       await sendMessage(values);
       form.reset();
@@ -63,8 +61,6 @@ export function ContactForm() {
         description: t("formErrorDescription"),
         variant: "destructive",
       });
-    } finally {
-      setIsSubmitting(false);
     }
   }
 
@@ -146,8 +142,13 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" disabled={isSubmitting} className="md:col-span-2">
-          {isSubmitting ? t("formSubmitting") : t("formSubmit")}
+        <Button
+          type="submit"
+          disabled={form.formState.isSubmitting}
+          className="md:col-span-2"
+        >
+          <FaPaperPlane className="mr-2" />
+          {form.formState.isSubmitting ? t("formSubmitting") : t("formSubmit")}
         </Button>
       </form>
     </Form>

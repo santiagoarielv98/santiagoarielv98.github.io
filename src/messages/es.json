@@ -207,5 +207,14 @@
   },
   "footer": {
     "copyright": "Todos los derechos reservados."
+  },
+  "Metadata": {
+    "title": "SV ~ Portfolio",
+    "description": "Bienvenido a mi portfolio, aquí podrás encontrar información sobre mi experiencia, proyectos y habilidades.",
+    "keywords": "santiago villanueva, portfolio, frontend developer, web developer, react, javascript, typescript, html, css",
+    "openGraphTitle": "Portafolio de Santiago Villanueva",
+    "openGraphDescription": "Portafolio de Santiago Villanueva, desarrollador full stack especializado en React, Angular, Java y Spring Boot.",
+    "twitterTitle": "Portafolio de Santiago Villanueva",
+    "twitterDescription": "Portafolio de Santiago Villanueva, desarrollador full stack especializado en React, Angular, Java y Spring Boot."
   }
 }
