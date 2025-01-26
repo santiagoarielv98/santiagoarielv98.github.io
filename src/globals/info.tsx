@@ -29,9 +29,9 @@ export const me = {
     href: "https://wa.me/542202529223",
   },
   linkedin: {
-    value: "linkedin.com/in/santiagoarielv98",
+    value: "linkedin.com/in/santiagoarielv",
     label: "santiagoarielv98",
-    href: "https://linkedin.com/in/santiagoarielv98",
+    href: "https://linkedin.com/in/santiagoarielv/",
   },
   website: {
     old: {
