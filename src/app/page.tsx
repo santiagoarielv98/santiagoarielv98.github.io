@@ -11,9 +11,7 @@ import { LoadParticles } from "@/components/particles";
 export default function Home() {
   return (
     <main>
-      <AnimatedSection>
-        <Hero />
-      </AnimatedSection>
+      <Hero />
       <AnimatedSection>
         <About />
       </AnimatedSection>
