@@ -36,6 +36,8 @@ import {
   SiSwagger,
   SiTailwindcss,
   SiTypescript,
+  SiPrisma,
+  SiShadcnui
 } from "react-icons/si";
 
 export interface Tech {
@@ -182,4 +184,12 @@ export const techs: Tech = {
     name: "Scrum",
     icon: FaUsers,
   },
+  prisma: {
+    name: "Prisma",
+    icon: SiPrisma,
+  },
+  shadcn: {
+    name: "shadcn/ui",
+    icon: SiShadcnui
+  }
 };

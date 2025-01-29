@@ -60,9 +60,15 @@ export interface Project {
 
 export const projectsList: Record<string, Project> = {
   mimap: {
-    demo: "https://mimap.sharktech.com.ar/",
+    demo: "https://red.miituzaingo.gov.ar/mimap/",
     image: "/assets/img/projects/mimap.webp",
     techs: ["laravel", "react", "leaflet", "inertia"],
+  },
+  svblogs: {
+    repo: "https://github.com/santiagoarielv98/sv-blogs",
+    image: "/assets/img/projects/sv-blogs.webp",
+    demo: "https://sv-blogs.vercel.app/",
+    techs: ["nextjs", "shadcn", "prisma"],
   },
   gestiontarea: {
     repo: "https://github.com/santiagoarielv98/sv-gestion-tarea",

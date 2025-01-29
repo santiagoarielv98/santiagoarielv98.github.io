@@ -57,6 +57,10 @@
       "solucionesfrontendmentor": {
         "title": "Soluciones Frontend Mentor",
         "description": "Soluciones a desafíos de Frontend Mentor."
+      },
+      "svblogs": {
+        "title": "SV Blogs",
+        "description": "Aplicación web para ver y crear blogs."
       }
     }
   },
