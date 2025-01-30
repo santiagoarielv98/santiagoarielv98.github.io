@@ -37,7 +37,7 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiPrisma,
-  SiShadcnui
+  SiShadcnui,
 } from "react-icons/si";
 
 export interface Tech {
@@ -190,6 +190,6 @@ export const techs: Tech = {
   },
   shadcn: {
     name: "shadcn/ui",
-    icon: SiShadcnui
-  }
+    icon: SiShadcnui,
+  },
 };
