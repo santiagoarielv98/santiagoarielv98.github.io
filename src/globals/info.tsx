@@ -62,31 +62,31 @@ export const projectsList: Record<string, Project> = {
   mimap: {
     demo: "https://red.miituzaingo.gov.ar/mimap/",
     image: "/assets/img/projects/mimap.webp",
-    techs: ["laravel", "react", "leaflet", "inertia"],
+    techs: ["laravel", "react", "leaflet", "inertia", "mysql"],
   },
   svblogs: {
     repo: "https://github.com/santiagoarielv98/sv-blogs",
     image: "/assets/img/projects/sv-blogs.webp",
     demo: "https://sv-blogs.vercel.app/",
-    techs: ["nextjs", "shadcn", "prisma"],
+    techs: ["nextjs", "shadcn", "prisma", "postgresql"],
   },
   gestiontarea: {
     repo: "https://github.com/santiagoarielv98/sv-gestion-tarea",
     image: "/assets/img/projects/sv-gestion-tarea.webp",
     demo: "https://sv-gestion-tarea.web.app/",
-    techs: ["react", "tailwindcss", "tanstack"],
+    techs: ["react", "tailwindcss", "tanstack", "postgresql"],
   },
   gestiontareaapi: {
     repo: "https://github.com/santiagoarielv98/sv-gestion-tarea-api",
     image: "/assets/img/projects/sv-gestion-tarea-api.webp",
     demo: "https://sv-gestion-tarea-api.vercel.app/",
-    techs: ["nestjs", "supabase", "swagger"],
+    techs: ["nestjs", "supabase", "swagger", "postgresql"],
   },
   svworld: {
     repo: "https://github.com/santiagoarielv98/sv-country-app",
     image: "/assets/img/projects/sv-country.webp",
     demo: "https://sv-country-app.vercel.app/",
-    techs: ["react", "bootstrap", "axios"],
+    techs: ["react", "bootstrap", "axios", "postgresql"],
   },
   cocheriaratti: {
     repo: "https://github.com/santiagoarielv98/sv-cocheria-ratti",
