@@ -12,7 +12,7 @@ import { contactInfo } from "@/globals/contact";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { ContactForm } from "./contact-form";
+import { ContactForm } from "../../components/contact-form";
 
 export default function Contact() {
   const t = useTranslations("contact");

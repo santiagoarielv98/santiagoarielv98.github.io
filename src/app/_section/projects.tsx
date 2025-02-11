@@ -15,7 +15,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-import TechIcon from "./tech-icon";
+import TechIcon from "../../components/tech-icon";
 
 export default function Projects() {
   const t = useTranslations("projects");
@@ -23,7 +23,7 @@ export default function Projects() {
 
   const projects = React.useMemo(
     () =>
-      Object.entries(projectsList).map(([name, item]) => {
+      Object.entries(projectsList).slice(0, 6).map(([name, item]) => {
         const title = t(`projectsList.${name}.title`);
         const description = t.rich(`projectsList.${name}.description`, {
           link: (chuncks) => (

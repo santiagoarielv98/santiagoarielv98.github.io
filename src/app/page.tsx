@@ -1,9 +1,9 @@
 import Hero from "@/components/hero";
-import About from "@/components/about";
-import Skills from "@/components/skills";
-import Projects from "@/components/projects";
-import Resume from "@/components/resume";
-import Contact from "@/components/contact";
+import About from "@/app/_section/about";
+import Skills from "@/app/_section/skills";
+import Projects from "@/app/_section/projects";
+import Resume from "@/app/_section/resume";
+import Contact from "@/app/_section/contact";
 import { AnimatedSection } from "@/components/animated-section";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { LoadParticles } from "@/components/particles";
