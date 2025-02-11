@@ -15,7 +15,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-import TechIcon from "../../components/tech-icon";
+import TechIcon from "@/components/tech-icon";
 
 export default function Projects() {
   const t = useTranslations("projects");

@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { useTranslations } from "next-intl";
-import TechIcon from "../../components/tech-icon";
+import TechIcon from "@/components/tech-icon";
 
 export interface TimelineItem {
   title: string;

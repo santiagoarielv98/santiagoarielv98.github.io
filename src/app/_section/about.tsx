@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { me } from "@/globals/info";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaGlobe } from "react-icons/fa";
+import { aboutItems } from "@/globals/about";
 
 export default function About() {
   const t = useTranslations("about");
@@ -36,34 +36,15 @@ export default function About() {
               {t("description")}
             </p>
             <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
-              <div className="flex items-center space-x-2">
-                <FaPhone
-                  className="h-5 w-5 text-primary"
-                  aria-label={a11y("ariaLabel.phone")}
-                />
-                <span>{t("phone")}</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <FaEnvelope
-                  className="h-5 w-5 text-primary"
-                  aria-label={a11y("ariaLabel.email")}
-                />
-                <span>{t("email")}</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <FaMapMarkerAlt
-                  className="h-5 w-5 text-primary"
-                  aria-label={a11y("ariaLabel.location")}
-                />
-                <span>{t("location")}</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <FaGlobe
-                  className="h-5 w-5 text-primary"
-                  aria-label={a11y("ariaLabel.website")}
-                />
-                <span>{t("website")}</span>
-              </div>
+              {aboutItems.map((item, index) => (
+                <div key={index} className="flex items-center space-x-2">
+                  <item.icon
+                    className="h-5 w-5 text-primary"
+                    aria-label={a11y(item.ariaLabel)}
+                  />
+                  <span>{t(item.title)}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>

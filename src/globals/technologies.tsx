@@ -38,7 +38,7 @@ import {
   SiTypescript,
   SiPrisma,
   SiShadcnui,
-  SiMercadopago
+  SiMercadopago,
 } from "react-icons/si";
 
 export interface Tech {
@@ -196,5 +196,5 @@ export const techs: Tech = {
   mercadopago: {
     name: "MercadoPago API",
     icon: SiMercadopago,
-  }
+  },
 };

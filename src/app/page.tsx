@@ -6,7 +6,6 @@ import Resume from "@/app/_section/resume";
 import Contact from "@/app/_section/contact";
 import { AnimatedSection } from "@/components/animated-section";
 import { ScrollToTop } from "@/components/scroll-to-top";
-import { LoadParticles } from "@/components/particles";
 
 export default function Home() {
   return (
@@ -28,7 +27,6 @@ export default function Home() {
         <Contact />
       </AnimatedSection>
       <ScrollToTop />
-      <LoadParticles />
     </main>
   );
 }
