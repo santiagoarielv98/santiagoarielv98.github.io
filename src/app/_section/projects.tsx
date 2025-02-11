@@ -23,77 +23,79 @@ export default function Projects() {
 
   const projects = React.useMemo(
     () =>
-      Object.entries(projectsList).slice(0, 6).map(([name, item]) => {
-        const title = t(`projectsList.${name}.title`);
-        const description = t.rich(`projectsList.${name}.description`, {
-          link: (chuncks) => (
-            <Link
-              href={item.meta!.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={a11y("ariaLabel.demo")}
-              className="text-blue-500 hover:underline"
+      Object.entries(projectsList)
+        .slice(0, 6)
+        .map(([name, item]) => {
+          const title = t(`projectsList.${name}.title`);
+          const description = t.rich(`projectsList.${name}.description`, {
+            link: (chuncks) => (
+              <Link
+                href={item.meta!.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={a11y("ariaLabel.demo")}
+                className="text-blue-500 hover:underline"
+              >
+                {chuncks}
+              </Link>
+            ),
+          });
+          return (
+            <Card
+              key={name}
+              className="mx-auto flex max-w-sm flex-col overflow-hidden"
             >
-              {chuncks}
-            </Link>
-          ),
-        });
-        return (
-          <Card
-            key={name}
-            className="mx-auto flex max-w-sm flex-col overflow-hidden"
-          >
-            <Image
-              src={item.image}
-              alt={t(`projectsList.${name}.title`)}
-              width={360}
-              height={180}
-              className="h-48 w-full rounded-t-lg border-b object-cover"
-            />
-            <CardHeader>
-              <CardTitle>{title}</CardTitle>
-              <CardDescription>{description}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-2">
-                {item.techs.map((name) => (
-                  <TechIcon key={name} name={name} />
-                ))}
-              </div>
-            </CardContent>
-            <CardFooter className="mt-auto flex justify-between">
-              {item.repo ? (
-                <Button variant="outline" size="sm" asChild>
-                  <Link
-                    href={item.repo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={a11y("ariaLabel.github")}
-                  >
-                    <FaGithub className="mr-2 h-4 w-4" />
-                    {t("repo")}
-                  </Link>
-                </Button>
-              ) : (
-                <div />
-              )}
-              {item.demo && (
-                <Button variant="outline" size="sm" asChild>
-                  <Link
-                    href={item.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={a11y("ariaLabel.demo")}
-                  >
-                    <FaExternalLinkAlt className="mr-2 h-4 w-4" />
-                    {t("demo")}
-                  </Link>
-                </Button>
-              )}
-            </CardFooter>
-          </Card>
-        );
-      }),
+              <Image
+                src={item.image}
+                alt={t(`projectsList.${name}.title`)}
+                width={360}
+                height={180}
+                className="h-48 w-full rounded-t-lg border-b object-cover"
+              />
+              <CardHeader>
+                <CardTitle>{title}</CardTitle>
+                <CardDescription>{description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2">
+                  {item.techs.map((name) => (
+                    <TechIcon key={name} name={name} />
+                  ))}
+                </div>
+              </CardContent>
+              <CardFooter className="mt-auto flex justify-between">
+                {item.repo ? (
+                  <Button variant="outline" size="sm" asChild>
+                    <Link
+                      href={item.repo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={a11y("ariaLabel.github")}
+                    >
+                      <FaGithub className="mr-2 h-4 w-4" />
+                      {t("repo")}
+                    </Link>
+                  </Button>
+                ) : (
+                  <div />
+                )}
+                {item.demo && (
+                  <Button variant="outline" size="sm" asChild>
+                    <Link
+                      href={item.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={a11y("ariaLabel.demo")}
+                    >
+                      <FaExternalLinkAlt className="mr-2 h-4 w-4" />
+                      {t("demo")}
+                    </Link>
+                  </Button>
+                )}
+              </CardFooter>
+            </Card>
+          );
+        }),
     [t, a11y],
   );
 

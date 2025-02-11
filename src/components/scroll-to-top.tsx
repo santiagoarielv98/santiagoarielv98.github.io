@@ -38,7 +38,7 @@ export function ScrollToTop() {
       transition={{ duration: 0.3 }}
       className="fixed bottom-4 right-4 z-50"
     >
-      <Button onClick={scrollToTop} size="icon">
+      <Button onClick={scrollToTop} size="icon" className="shadow-lg">
         <FaArrowUp className="h-4 w-4" />
       </Button>
     </motion.div>
