@@ -59,6 +59,12 @@ export interface Project {
 }
 
 export const projectsList: Record<string, Project> = {
+  svecommercesimple: {
+    repo: "https://github.com/santiagoarielv98/sv-ecommerce-simple",
+    image: "/assets/img/projects/sv-ecommerce-simple.webp",
+    demo: "https://sv-ecommerce-simple.vercel.app/",
+    techs: ["nextjs", "mui", "prisma", "mongodb", "mercadopago"],
+  },
   mimap: {
     demo: "https://red.miituzaingo.gov.ar/mimap/",
     image: "/assets/img/projects/mimap.webp",

@@ -38,6 +38,7 @@ import {
   SiTypescript,
   SiPrisma,
   SiShadcnui,
+  SiMercadopago
 } from "react-icons/si";
 
 export interface Tech {
@@ -192,4 +193,8 @@ export const techs: Tech = {
     name: "shadcn/ui",
     icon: SiShadcnui,
   },
+  mercadopago: {
+    name: "MercadoPago API",
+    icon: SiMercadopago,
+  }
 };

@@ -61,6 +61,10 @@
       "svblogs": {
         "title": "SV Blogs",
         "description": "Aplicación web para ver y crear blogs."
+      },
+      "svecommercesimple": {
+        "title": "SV - Ecommerce",
+        "description": "E-Commerce simple, con carrito de compras y checkout."
       }
     }
   },
