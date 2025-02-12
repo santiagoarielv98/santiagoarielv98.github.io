@@ -15,7 +15,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-import TechIcon from "@/components/tech-icon";
+import TechBadge from "@/components/tech-badge";
 
 export default function Projects() {
   const t = useTranslations("projects");
@@ -59,7 +59,7 @@ export default function Projects() {
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {item.techs.map((name) => (
-                    <TechIcon key={name} name={name} />
+                    <TechBadge key={name} name={name} />
                   ))}
                 </div>
               </CardContent>

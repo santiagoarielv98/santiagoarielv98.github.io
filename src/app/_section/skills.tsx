@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { skillsList } from "@/globals/skills";
 import { useTranslations } from "next-intl";
 import React from "react";
-import TechIcon from "@/components/tech-icon";
+import TechBadge from "@/components/tech-badge";
 
 export default function Skills() {
   const t = useTranslations("skills");
@@ -29,7 +29,7 @@ export default function Skills() {
               <p className="mb-4">{description}</p>
               <div className="flex flex-wrap gap-2">
                 {item.skills.map((name) => (
-                  <TechIcon key={name} name={name} />
+                  <TechBadge key={name} name={name} />
                 ))}
               </div>
             </CardContent>

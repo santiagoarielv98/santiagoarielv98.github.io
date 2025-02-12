@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { useTranslations } from "next-intl";
-import TechIcon from "@/components/tech-icon";
+import TechBadge from "@/components/tech-badge";
 
 export interface TimelineItem {
   title: string;
@@ -69,7 +69,7 @@ function TimelineSection({
             <CardFooter>
               <div className="flex flex-wrap gap-2">
                 {item.tags.map((name) => (
-                  <TechIcon key={name} name={name} />
+                  <TechBadge key={name} name={name} />
                 ))}
               </div>
             </CardFooter>

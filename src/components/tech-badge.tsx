@@ -1,11 +1,11 @@
 import { techs } from "@/globals/technologies";
 import { Badge } from "./ui/badge";
 
-interface TechIconProps {
+interface TechBadgeProps {
   name: string;
 }
 
-const TechIcon = ({ name }: TechIconProps) => {
+const TechBadge = ({ name }: TechBadgeProps) => {
   const { name: iconName, icon: Icon } = techs[name] ?? techs["code"];
   return (
     <Badge variant="secondary" className="flex items-center gap-2">
@@ -15,4 +15,4 @@ const TechIcon = ({ name }: TechIconProps) => {
   );
 };
 
-export default TechIcon;
+export default TechBadge;

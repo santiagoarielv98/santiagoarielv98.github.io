@@ -1,6 +1,4 @@
 import { Footer } from "@/components/footer"; // Import the Footer component
-import { Nav } from "@/components/nav";
-import { ThemeProvider } from "@/components/theme-provider";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { Toaster } from "@/components/ui/toaster";
 import { LanguageProvider } from "@/contexts/LanguageContext";
@@ -14,7 +12,9 @@ import "./globals.css";
 
 const roboto = Roboto({ weight: "400", subsets: ["latin-ext"] });
 
+import { AppSidebar } from "@/components/sidebar/app-sidebar";
 import { getTranslations } from "next-intl/server";
+import { ThemeProvider } from "./provider";
 
 export async function generateMetadata({
   params: { locale },
@@ -75,7 +75,7 @@ export default async function RootLayout({
             <LanguageProvider>
               <SidebarProvider>
                 <div className="flex min-h-screen w-full">
-                  <Nav />
+                  <AppSidebar />
                   <div className="flex flex-1 flex-col">
                     <main className="flex-1">{children}</main>
                     <Footer />
