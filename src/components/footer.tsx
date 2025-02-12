@@ -11,7 +11,7 @@ export function Footer() {
       aria-label={a11y("ariaLabel.footer")}
     >
       <div className="container mx-auto text-center">
-        <p id="footer-title">
+        <p id="footer-title" className="text-xs md:text-sm">
           &copy; {new Date().getFullYear()} {me.name} {me.lastName}.{" "}
           {t("copyright")}
         </p>
