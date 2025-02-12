@@ -5,6 +5,7 @@ import { me } from "@/globals/info";
 import { toast } from "@/hooks/use-toast";
 import { FaFileDownload } from "react-icons/fa";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export default function Hero() {
   const t = useTranslations("hero");
@@ -24,7 +25,7 @@ export default function Hero() {
           </h1>
           <p className="mb-8 text-xl">{t("description")}</p>
           <Button variant="outline" aria-label={a11y("downloadCv")} asChild>
-            <a
+            <Link
               download={me.cv.download}
               href={me.cv.href}
               target="_blank"
@@ -39,7 +40,7 @@ export default function Hero() {
             >
               <FaFileDownload className="h-5 w-5" aria-hidden="true" />
               {t("button")}
-            </a>
+            </Link>
           </Button>
         </div>
       </section>

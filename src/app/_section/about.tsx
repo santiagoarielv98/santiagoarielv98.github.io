@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { me } from "@/globals/info";
 import { aboutItems } from "@/globals/about";
+import { Button } from "@/components/ui/button";
 
 export default function About() {
   const t = useTranslations("about");
@@ -37,13 +38,13 @@ export default function About() {
             </p>
             <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
               {aboutItems.map((item, index) => (
-                <div key={index} className="flex items-center space-x-2">
+                <Button key={index} variant="ghost" className="justify-start">
                   <item.icon
                     className="h-5 w-5 text-primary"
                     aria-label={a11y(item.ariaLabel)}
                   />
                   <span>{t(item.title)}</span>
-                </div>
+                </Button>
               ))}
             </div>
           </div>
